@@ -5,7 +5,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* background-color: #242424; */
+  background: rgb(2,2,23);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -74,3 +75,13 @@ body {
   mix-blend-mode: overlay;
   max-width:300px;
 }
+
+.top {
+  background: rgb(2,2,23);
+  background: linear-gradient(0deg, rgba(2,2,23,1) 0%, rgba(33,33,51,1) 12%, rgba(255,255,255,1) 100%);
+  height: 33vh;
+  display: block;
+  width: 100%;
+  align-self: flex-start;
+}
+// linear-gradient(0deg, rgba(2,2,23,1) 1%, rgba(33,33,51,1) 100%, rgba(255,255,255,1) 57%)
