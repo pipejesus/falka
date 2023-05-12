@@ -21,26 +21,26 @@ vec3 createCircular(vec2 uvc, vec3 initial, float radius, vec3 color, float seed
 
     radius += (0.05) * (radius / 0.5) *  (sin(iTime) + 1.0);
 
-    float z = 1.-smoothstep(radius-(radius*0.001),
-                         radius+(radius*0.001),
+    float z = 1.-smoothstep(radius-(radius*0.259),
+                         radius+(radius*0.259),
                          dot(dist, dist2)*4.0);
     
     float za = smoothstep(0.5, 1.0, mod(gl_FragCoord.x, 40.0));
     za *= smoothstep(0.5, 1.0, mod(gl_FragCoord.y, 40.0));
 
-    // float za2 = (0.1 * floor(gl_FragCoord.y / 40.0));
-    // za2 = za2 * (0.1 * floor(gl_FragCoord.x / 40.0));
-    // za2 = 1.0 - za2;
+    float za2 = (0.1 * floor(gl_FragCoord.y / 40.0));
+    za2 = za2 * (0.1 * floor(gl_FragCoord.x / 40.0));
     
     // if (za <= 0.0) {
     //     color.z = color.z + 0.1;
     // }
     // } else {
-        // color.z = color.z + za;
+        // color.z = color.z * za2;
     // }
-    vec3 colorRGB= hsb2rgb(color);
-    vec3 r = colorRGB * z;
 
+    vec3 colorRGB= hsb2rgb(color);
+    vec3 r = mix(initial, colorRGB, z); // vec3 r = colorRGB * z;
+    
     return mix(initial, r, z);
 }
 
