@@ -1,2 +1,82 @@
 import './style.css';
 import 'shader-doodle';
+import ClipboardJS from 'clipboard';
+import shaderString from './circlz.shader.glsl?raw';
+import falkaShaderString from './falka-light.shader.glsl?raw';
+import initModule from './index.js';
+import Alpine from 'alpinejs';
+
+window.resizeRaylibCanvas = null;
+window.Alpine = Alpine;
+Alpine.start();
+
+const elements = {
+    canvasPtack: null,
+    canvasPtackGrid: null,
+};
+
+function scanElements() {
+    elements.canvasPtack = document.querySelector('#canvas');
+    elements.canvasPtackGrid = document.querySelector('[data-canvas-ptack-grid]');    
+}
+
+function getCanvasPtackSize() {
+    return {
+        width: elements.canvasPtackGrid.offsetWidth,
+        height: elements.canvasPtackGrid.offsetHeight
+    };
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    scanElements();
+
+    // new ClipboardJS('[data-clipboard-copy]', {
+
+    // });
+
+    const shaderContainer = document.getElementById('circlz_shader_container');
+    
+    const doodle = document.createElement('shader-doodle');
+    doodle.setAttribute('shadertoy', '');
+    doodle.classList.add('w-full', 'h-auto', 'aspect-video');
+    
+    const doodleShader = document.createElement('script');
+    doodleShader.setAttribute('type', 'x-shader/x-fragment');
+    doodleShader.textContent = shaderString;
+    doodle.appendChild(doodleShader);
+    shaderContainer.appendChild(doodle);
+
+    initModule({
+        print: function (n) {    
+            arguments.length > 1 && (n = Array.prototype.slice.call(arguments).join(" ")), console.log(n)
+        }, 
+        canvas: elements.canvasPtack
+    }).then((raylibModule) => {
+        window.resizeRaylibCanvas = raylibModule.cwrap(
+            "onResize",
+            null,
+            ["number", "number"]
+        );
+        
+        resizeHandler();
+    });
+
+    let resizeHandler = () => {        
+        const dimensions = getCanvasPtackSize();
+
+        const w = elements.canvasPtack.width
+            = dimensions.width;
+
+        const h = elements.canvasPtack.height
+            = dimensions.height;            
+
+        window.resizeRaylibCanvas(w, h);
+    }
+
+    window.addEventListener(
+        "resize",
+        resizeHandler,
+        true
+    );
+});
+

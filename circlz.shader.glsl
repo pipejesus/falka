@@ -27,9 +27,9 @@ vec3 createCircular(vec2 uvc, vec3 initial, float radius, vec3 color, float seed
     dist2 += vec2(0.9 * addX, 0.7 * addY);        
     radius += (0.05) * (radius / 0.5) *  (sin(iTime) + 1.0);
 
-    float z = 1.0 - smoothstep(radius-(radius*0.191),
-                         radius+(radius*0.041),
-                         dot(dist, dist2)*4.0);
+    float z = 1.0 - smoothstep(radius-(radius*0.300),
+                         radius+(radius*0.891),
+                         dot(dist, dist2)*5.0);
     
     vec3 colorRGB= hsb2rgb(color);
     vec3 r = mix(initial, colorRGB, z);     
@@ -41,14 +41,14 @@ void main() {
     vec2 uv = 1.0 - (gl_FragCoord.xy / iResolution.xy);
     vec2 uvc = uv - vec2(0.5,0.5);    
     uvc.x *= iResolution.x / iResolution.y;
-    vec3 initial = hsb2rgb(vec3(1.0, 0.0, 0.9));
+    // vec3 initial = hsb2rgb(vec3(1.0, 0.0, 0.9));
+    vec3 initial = hsb2rgb(vec3(1.0, 0.0, 1.0));
 
     float hue = 1.0; //0.113; // 0.583;
-    // vec3 c = createCircular(uvc, initial, 0.5, vec3(hue, 0.6, 1.0), 0.0);
 
-    vec3 c = createCircular(uvc, initial, 0.52, vec3(hue, 0.03, 0.899), 3.14 / 8.0);     
+    vec3 c = createCircular(uvc, initial, 0.52, vec3(hue, 0.03, 0.899), 3.14 / 16.0);     
     c = createCircular(uvc, c, 0.5, vec3(hue, 0.6, 1.0), 0.0);
-    c = createCircular(uvc, c, 0.35, vec3(hue, 0.5, 1.0), 3.14 / 2.0);
-    c = createCircular(uvc, c, 0.05, vec3(hue, 0.4, 1.0), 3.14 / 2.0);
+    c = createCircular(uvc, c, 0.25, vec3(0.554, 0.5, 0.7), 3.14 / 2.0);
+    c = createCircular(uvc, c, 0.05, vec3(hue, 0.0, 0.88), 3.14 / 2.0);
     gl_FragColor = vec4(c, 1.0);
 }
