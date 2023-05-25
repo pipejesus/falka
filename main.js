@@ -2,7 +2,7 @@ import './style.css';
 import 'shader-doodle';
 import ClipboardJS from 'clipboard';
 import shaderString from './circlz.shader.glsl?raw';
-import falkaShaderString from './falka-light.shader.glsl?raw';
+import falkaShaderString from './fallusie.shader.glsl?raw';
 import initModule from './index.js';
 import Alpine from 'alpinejs';
 
@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
 
     const shaderContainer = document.getElementById('circlz_shader_container');
+    const falkaShaderContainer = document.getElementById('falka_shader_container');
     
     const doodle = document.createElement('shader-doodle');
     doodle.setAttribute('shadertoy', '');
@@ -45,6 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
     doodleShader.textContent = shaderString;
     doodle.appendChild(doodleShader);
     shaderContainer.appendChild(doodle);
+
+    const falkaDoodle = document.createElement('shader-doodle');
+    falkaDoodle.setAttribute('shadertoy', '');
+    falkaDoodle.classList.add('w-full', 'h-full');
+    
+    const falkaDoodleShader = document.createElement('script');
+    falkaDoodleShader.setAttribute('type', 'x-shader/x-fragment');
+    falkaDoodleShader.textContent = falkaShaderString;
+    falkaDoodle.appendChild(falkaDoodleShader);
+    falkaShaderContainer.appendChild(falkaDoodle);
 
     initModule({
         print: function (n) {    

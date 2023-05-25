@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Greg Jasiński: Resume/Portfolio</title>
   </head>
+
   <body class x-data="{}">
 
+    <!--Site menu-->
     <div class="fixed top-12 right-12 z-50">
       <ul class="text-right funky-nav" x-data="{current: null}">
         <li class="mb-2" @click="current = 1">          
@@ -16,15 +18,15 @@
               motivation
             </span>          
         </li>
-        <li class="mb-2"  @click="current = 2">
-          <span class="badge-lg badge rounded-sm" :class="current == 2 ? 'p-4' : ''">
-            wordpress work
-          </span>
-        </li>
         <li class="mb-2" @click="current = 3">
           <span class="badge-lg badge rounded-sm" :class="current == 3 ? 'p-4' : ''">
             visual / animation
           </span>          
+        </li>        
+        <li class="mb-2"  @click="current = 2">
+          <span class="badge-lg badge rounded-sm" :class="current == 2 ? 'p-4' : ''">
+            wordpress work
+          </span>
         </li>
         <li class="mb-2" @click="current = 4">
           <span class="badge-lg badge rounded-sm" :class="current == 4 ? 'p-4' : ''">
@@ -39,29 +41,27 @@
       </ul>  
     </div>
 
+    <!--#1 Intro page-->
     <div class="container px-12 mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-12 lg:h-screen snap-start" >
 
+        <!--Presentation section-->
         <div 
           class="mix-blend-multiply w-full h-screen lg:h-auto flex items-center justify-center lg:col-span-6 lg:row-span-1 cursor-pointer relative lg:col-start-4 lg:row-start-5" 
           id="circlz_shader_container"
-          x-data="{showDescription: false}"
-          x-on:mouseover="showDescription = true"
-          x-on:mouseout="showDescription = false" 
         >
-
-          <div class="absolute w-full h-full top-0 left-0 z-10" x-show="showDescription">           
-          </div>
         </div>
 
+        <!--Details section-->
         <div class="w-full items-start justify-center flex lg:col-span-5 lg:col-start-5 lg:row-start-10 lg:row-span-full" style="--tw-bg-opacity: 0.01">
           <div class="prose font-light">
-            <h1 class="font-thin uppercase">Why code</h1>
-            <p id="bi-t" class="2xl:text-lg 2xl:leading-loose">Hello traveller, I work on bringing designs to life. I fell in <span class="inline-block mask mask-heart bg-gray-400 w-3">&nbsp;</span> with coding during the childchood moments spent on writing a snake game clone, back in the Turbo Pascal days. That experience put me in a groove leading to the discovery web development and the WordPress environment.</span></p>            
+            <h1 class="font-thin uppercase">What & Why</h1>
+            <p id="bi-t" class="2xl:text-lg 2xl:leading-loose">Hello dear recruiter, I work on bringing designs to life. I fell in <span class="inline-block mask mask-heart bg-gray-400 w-3">&nbsp;</span> with coding during the early moments spent on writing a snake game clone, back in the Turbo Pascal days. That experience put me on a path leading to the discovery of web development and the WordPress environment.</span></p>            
           </div>          
         </div>
         
-        <div class="w-full h-screen lg:h-auto items-start justify-left flex lg:col-span-full lg:row-span-2 lg:col-start-1 lg:row-start-10" style="--tw-bg-opacity: 0.01">
+        <!--Contact section-->
+        <div class="w-full h-screen lg:h-auto items-start justify-left flex lg:col-span-full lg:row-span-full lg:col-start-1 lg:row-start-10" style="--tw-bg-opacity: 0.01">
           <h1 class="napis">
             <div class="flex flex-col lg:flex-row items-center gap-4 text-center lg:text-left">
               <div class="avatar">
@@ -98,14 +98,14 @@
         </div>
         
       </div>    
-
     </div><!--container-->
 
-    <!-- <div class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-12 lg:h-[10vh] bg-[#020217] mask-funky">   
-    </div> -->
+    <!--#2 Animation page-->
     <div class="container mx-auto px-12">
       <div class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-12 lg:h-screen snap-start">
-        <div class="w-full h-screen lg:h-auto items-start justify-left flex lg:col-span-full lg:row-span-2 lg:col-start-1 lg:row-start-10" style="--tw-bg-opacity: 0.01">
+
+        <!--contact section-->
+        <div class="w-full h-screen lg:h-auto items-start justify-left flex lg:col-span-full lg:row-span-full lg:col-start-1 lg:row-start-10" style="--tw-bg-opacity: 0.01">
           <h1 class="napis">
             <div class="flex flex-col lg:flex-row items-center gap-4 text-center lg:text-left">
               <div class="avatar">
@@ -141,20 +141,22 @@
           </h1>    
         </div>
 
+        <!--details section-->
         <div class="w-full items-start justify-center flex lg:col-span-5 lg:col-start-5 lg:row-start-10 lg:row-span-full" style="--tw-bg-opacity: 0.01">
           <div class="prose font-light">
-            <h1 class="font-thin uppercase">PRACTICE</h1>
+            <h1 class="font-thin uppercase">VISUAL / ANIMATION</h1>
             <p class="2xl:text-lg 2xl:leading-loose">
               I enjoy the tangible side of coding focused on visuals, animations and interactivity, especially in relation to 3D graphics and motion design. 
-              Though I consider it mostly as an experiment, this area can bring the best of me. I also <span class="inline-block mask mask-heart bg-gray-400 w-3">&nbsp;</span> doing pottery and beat making on my Digitakt.  
+              Though I consider it mostly as an experiment, this area brings the best part of me. I also <span class="inline-block mask mask-heart bg-gray-400 w-3">&nbsp;</span> doing pottery and beat making on my Digitakt.  
             </p>            
           </div>          
         </div>        
 
-        <div 
-        class="mix-blend-multiply w-full h-screen lg:h-auto flex lg:col-span-4 aspect-square lg:col-start-5 lg:row-start-3" 
-        data-canvas-ptack-grid 
-        style="filter: drop-shadow(20px 22px 0px #efefef);">        
+        <!--presentation section-->
+        <div class="mix-blend-multiply w-full h-screen lg:h-auto flex lg:col-span-4 aspect-square lg:col-start-5 lg:row-start-2" 
+          data-canvas-ptack-grid 
+          style="filter: drop-shadow(20px 22px 0px #efefef);"
+        >        
           <div class="relative">
             <div class="mask mask-squircle bg-[#f66b6b] w-1/2 h-1/2 absolute top-1/2 left-0 -translate-y-1/2 -translate-x-96 -rotate-[25deg]">
               <div class="prose font-black text-white flex flex-col content-center justify-center items-center h-full">                
@@ -178,6 +180,7 @@
                   <span class="badge badge-ghost">#glsl</span>
                   <span class="badge badge-ghost">#meshroom</span>
                   <span class="badge badge-ghost">#clay modeling</span>
+                  <span class="badge badge-ghost">#js</span>
                 </p>                
               </div>
             </div>
@@ -204,29 +207,79 @@
       </div>          
     </div>
 
-    <!-- <footer class="footer p-10 bg-neutral text-neutral-content">
-      <div>
-        <span class="footer-title">Services</span> 
-        <a class="link link-hover">Branding</a>
-        <a class="link link-hover">Design</a>
-        <a class="link link-hover">Marketing</a>
-        <a class="link link-hover">Advertisement</a>
-      </div> 
-      <div>
-        <span class="footer-title">Company</span> 
-        <a class="link link-hover">About us</a>
-        <a class="link link-hover">Contact</a>
-        <a class="link link-hover">Jobs</a>
-        <a class="link link-hover">Press kit</a>
-      </div> 
-      <div>
-        <span class="footer-title">Legal</span> 
-        <a class="link link-hover">Terms of use</a>
-        <a class="link link-hover">Privacy policy</a>
-        <a class="link link-hover">Cookie policy</a>
-      </div>
-    </footer>     -->
+    <!--#3 WordPress page-->
+    <div class="container mx-auto px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-12 lg:h-screen snap-start">
+
+        <!--contact section-->
+        <div class="w-full h-screen lg:h-auto items-start justify-left flex lg:col-span-full lg:row-span-full lg:col-start-1 lg:row-start-10" style="--tw-bg-opacity: 0.01">
+          <h1 class="napis">
+            <div class="flex flex-col lg:flex-row items-center gap-4 text-center lg:text-left">
+              <div class="avatar">
+                <div class="w-24 rounded-full">                
+                    <img src="https://place.dog/300/200" class="grayscale"/>                  
+                </div>
+              </div>
+              <div>                
+                <span class="text-3xl block">GREG JASIŃSKI</span>              
+                <span class="uppercase text-sm block">PHP / JavaScript developer</span>
+              </div>              
+            </div>            
+            
+            <div class="flex items-center gap-4 mt-12">
+              <a href="#" class="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 13.5l3 3m0 0l3-3m-3 3v-6m1.06-4.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                </svg>
+                Download Resume
+              </a>
   
+              <div class="inline-block tooltip tooltip-outline"  data-tip="Click to copy e-mail to clipboard">
+                <a href="mailto:grzegorz.karol.jasinski@gmail.com" class="btn btn-outline">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                  E-mail
+                </a>  
+              </div>  
+            </div>          
+          </h1>    
+        </div>
+
+        <!--details section-->
+        <div class="w-full items-start justify-center flex lg:col-span-5 lg:col-start-5 lg:row-start-10 lg:row-span-full" style="--tw-bg-opacity: 0.01">
+          <div class="prose font-light">
+            <h1 class="font-thin uppercase">WordPress Work</h1>
+            <p class="2xl:text-lg 2xl:leading-loose">
+             I've been involved in developing and maintaining custom themes, plugins and gutenberg blocks using various frameworks including <span class="badge-ghost badge">sage</span>, <span class="badge badge-ghost">bedrock</span> and <span class="badge badge-ghost">woocommerce</span>.
+             While here you'll find some highlights of what I enjoyed the most, the <a href="#" class="link link-hover"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block w-4 h-4 align-middle">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 13.5l3 3m0 0l3-3m-3 3v-6m1.06-4.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"></path>
+            </svg> <span class="align-middle">resume</span></a> contains all the details you need.
+            </p>            
+          </div>          
+        </div>   
+                
+        <div class="w-full items-start justify-center flex lg:col-span-12 lg:col-start-1 lg:row-span-6 lg:row-start-2 text-center relative">
+            <div id="falka_shader_container" class="w-full h-full absolute top-0 left-0 z-0"></div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 w-full h-full z-10">
+                <div class="lg:col-span-8 lg:col-start-3 bg-slate-950/25 relative">
+
+                  <div class="carousel rounded-none w-full h-full">
+                    <div class="carousel-item w-full h-full">
+                      <div class="flex h-full w-full content-between">
+                        <div class="bg-black w-1/2">left</div>
+                        <div class="bg-red-400 w-1/2">right</div> 
+                      </div>
+                    </div>                     
+                  </div>
+
+                </div> 
+            </div>
+        </div>
+
+      </div>
+    </div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
