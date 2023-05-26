@@ -1,0 +1,21 @@
+{
+    "workbench.colorTheme": "Synthwave x Fluoromachine & epic animations",
+    "editor.fontFamily": "'JuliaMono', 'JetBrains Mono', 'Syne Mono', 'IBM Plex Mono', 'MonoLisa', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontWeight": "100",
+    "editor.fontLigatures": "'calt' on, 'zero', 'ss01', 'ss05', 'ss07', 'ss13', 'cv02'",
+    "editor.lineHeight": 2.2,
+    "editor.fontSize": 16.5,    
+    "cmake.configureOnOpen": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+    },    
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "html"
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons"
+}
