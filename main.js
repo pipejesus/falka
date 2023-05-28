@@ -30,6 +30,12 @@ function getCanvasPtackSize() {
 document.addEventListener("DOMContentLoaded", () => {
     scanElements();
 
+    // const vids = document.getElementsByTagName('video');
+    // Array.from(vids).forEach(el => { el.onended = function () {
+    //     this.load();
+    //     this.play();
+    //   }});
+
     // new ClipboardJS('[data-clipboard-copy]', {
 
     // });
