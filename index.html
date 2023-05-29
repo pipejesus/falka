@@ -9,6 +9,11 @@
 
   <body class x-data="{}">
 
+    <audio id="audio" preload loop autoplay>
+      <source src="audio/birdy.mp3"  type="audio/mp3">
+    </audio>
+
+    
     <!--Site menu-->
     <div class="fixed top-12 right-12 z-50">
       <ul class="text-right funky-nav" x-data="{current: null}">
@@ -264,7 +269,7 @@
                     <div style="filter: drop-shadow(-8px 8px 0px rgba(0,0,0,0.2));">                      
                       <div class="mockup-code h-full bg-base-content/90">
                         <div class="flex w-full h-full gap-4 px-6 pb-8 pt-2">
-                          <video src="videos/shpong.webm" autoplay muted loop class="h-full w-1/2  object-contain rounded-sm"></video>
+                          <video src="videos/shpong.m4v" type="video/mp4" autoplay muted loop class="h-full w-1/2 object-contain rounded-sm"></video>
                           <div class="">
                             <pre><code><span class="badge badge-ghost">Stack</span></code></pre>
                             <pre><code></code></pre>
@@ -288,7 +293,7 @@
                     <div style="filter: drop-shadow(-8px 8px 0px rgba(0,0,0,0.2));">                      
                       <div class="mockup-code h-full bg-base-content/90">
                         <div class="flex w-full h-full gap-4 px-6 pb-8 pt-2">
-                          <video src="videos/doodle.webm" autoplay muted loop class="h-full object-contain rounded-sm"></video>                    
+                          <video src="videos/iliketurtles.m4v" type="video/mp4" autoplay muted loop class="h-full w-1/2 object-contain rounded-sm"></video> 
                           <div class="">
                             <pre><code><span class="badge badge-ghost">Stack</span></code></pre>
                             <pre><code></code></pre>
@@ -324,12 +329,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-12 lg:h-screen snap-start">
 
         <div class="lg:col-span-12 lg:row-span-7 lg:row-start-3">
-          <div class="flex w-full h-full gap-12 items-center">
+          <div class="flex w-full h-full gap-6 items-center" >
             <div class="w-1/2">
-              <video src="videos/rico.mp4" autoplay muted loop class="h-auto w-full aspect-square object-contain rounded-sm"></video>
+              <video src="videos/riconaplazy.m4v" type="video/mp4" autoplay muted loop class="h-full w-full aspect-square object-contain rounded-md filter-helena" style="clip-path: polygon(0 0, 100% 0, 100% 72%, 75% 100%, 25% 100%, 0 72%);"></video>
             </div>
             <div class="w-1/2">
-              <video src="videos/rico.mp4" autoplay muted loop class="h-auto w-full aspect-square object-contain rounded-sm -scale-x-[1]"></video>
+              <video src="videos/riconaplazy.m4v" type="video/mp4" autoplay muted loop class="h-full w-full aspect-square object-contain rounded-md -scale-x-[1] filter-inkwell" style="clip-path: polygon(0 0, 100% 0, 100% 72%, 75% 100%, 25% 100%, 0 72%);"></video>
             </div>            
           </div>
         </div>
@@ -339,27 +344,27 @@
           <div class="stats stats-vertical lg:stats-horizontal shadow">
   
             <div class="stat">
-              <div class="stat-title">languages</div>
-              <div class="stat-value">English</div>
-              <div class="stat-desc">good enough!</div>
+              <div class="stat-title font-light">languages</div>
+              <div class="stat-value font-thin">English</div>
+              <div class="stat-desc font-light">good enough!</div>
             </div>
             
             <div class="stat">
-              <div class="stat-title">speed</div>
-              <div class="stat-value">Turtle</div>
-              <div class="stat-desc">↗︎ but thorough</div>
+              <div class="stat-title font-light">speed</div>
+              <div class="stat-value font-thin">Turtle</div>
+              <div class="stat-desc font-light">↗︎ but thorough</div>
             </div>
             
             <div class="stat">
-              <div class="stat-title">dislikes</div>
-              <div class="stat-value">Scrum</div>
-              <div class="stat-desc">↘︎and hope everyone else does as well.</div>
+              <div class="stat-title font-light">dislikes</div>
+              <div class="stat-value font-thin">Pressure</div>
+              <div class="stat-desc font-light">↘︎factory chain mentality.</div>
             </div>
 
             <div class="stat">
-              <div class="stat-title">likes</div>
-              <div class="stat-value">Good laugh</div>
-              <div class="stat-desc">frendship, collaboration and sun</div>
+              <div class="stat-title font-light">likes</div>
+              <div class="stat-value font-thin">Good laugh</div>
+              <div class="stat-desc font-light">frendship and collaboration</div>
             </div>            
             
             </div>

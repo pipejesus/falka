@@ -23,6 +23,7 @@
     "alpinejs": "^3.12.1",
     "clipboard": "^2.0.11",
     "daisyui": "^2.51.6",
+    "instagram.css": "^0.1.4",
     "shader-doodle": "^1.0.0-alpha.20"
   }
 }

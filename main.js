@@ -1,4 +1,5 @@
 import './style.css';
+import 'instagram.css/dist/instagram.css';
 import 'shader-doodle';
 import ClipboardJS from 'clipboard';
 import shaderString from './circlz.shader.glsl?raw';

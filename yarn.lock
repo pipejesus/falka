@@ -687,6 +687,11 @@ inherits@2:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
 
+instagram.css@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/instagram.css/-/instagram.css-0.1.4.tgz#ab389533a3a1011706e09120396ffe5d98f4eb3d"
+  integrity sha512-4fwuwSZSuCdC1aM8VRfquVlCPsYNdRxw1Hv1mtDxMpC1seZE59RVThsfsJVfZrxjjJ7Tz352jRxlZsaEjDdekQ==
+
 is-arrayish@^0.3.1:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.3.2.tgz#4574a2ae56f7ab206896fb431eaeed066fdf8f03"
