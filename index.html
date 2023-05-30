@@ -12,6 +12,12 @@
       current: null,      
       navItems: [],
       observer: null,
+      isNavigating: false,
+      timeOut: null,
+      navClick(slug) {
+        this.isNavigating = true; 
+        this.current = slug;
+      }
     }"
 
     x-init="const sections = document.querySelectorAll('section');
@@ -25,7 +31,7 @@
 
       current = navItems[0].slug;
 
-      $watch('current', value => {
+      $watch('current', value => {        
         const search = `[data-section-slug=${value}]`;
         const screen = document.querySelector(search);
         screen.scrollIntoView({
@@ -33,13 +39,22 @@
           block: 'start',
         });
       });      
+
+      addEventListener('scroll', (e) => {                  
+        clearTimeout(timeOut);
+        timeOut = setTimeout(() => {
+            isNavigating = false;            
+        }, 100);
+      });      
       
       observer = new IntersectionObserver(
         (entries) => {
           for(const entry of entries) {
             if(entry.isIntersecting) {
-              const entrySlug = entry.target.dataset.sectionSlug;
-              current = entrySlug;
+              if (!isNavigating) {
+                const entrySlug = entry.target.dataset.sectionSlug;                            
+                current = entrySlug;              
+              }
             }
           }              
         },
@@ -47,10 +62,10 @@
           rootMargin: '-50% 0px'
         }
       );
-
+      
       for (let i = 0; i < sections.length; i++) {
         observer.observe(sections[i]);
-      }        
+      }              
     "
   >
     
@@ -59,8 +74,8 @@
       <ul class="text-right funky-nav">
         <template x-for="navItem in navItems">
           <li 
-            class="mb-2 cursor-pointer" 
-            @click="current = navItem.slug"
+            class="mb-2 cursor-pointer select-none" 
+            @click="navClick(navItem.slug)"
           >          
             <span 
               class="badge-lg tracking-wide badge rounded-sm" 
