@@ -19,7 +19,18 @@
           name: item.dataset.sectionName
         }
       });
+
       current = navItems[0].slug;
+
+      $watch('current', value => {
+        const search = `[data-section-slug=${value}]`;
+        const screen = document.querySelector(search);
+        screen.scrollIntoView({
+          behavior: 'auto',
+          block: 'start',
+        });
+      })"></body>
+
     "
   >
     
@@ -57,7 +68,7 @@
         <div class="w-full items-start justify-center flex lg:col-span-5 lg:col-start-5 lg:row-start-10 lg:row-span-full" style="--tw-bg-opacity: 0.01">
           <div class="prose font-light">
             <h1 class="font-thin uppercase">Who & Why</h1>
-            <p id="bi-t" class="2xl:text-lg 2xl:leading-loose">Dear recruiter, I'm Greg. I work on bringing designs to life. I got involved in coding somewhere in the 90s while dabbling with snake game clone in Turbo Pascal. That experience eventually set my path to discovering web development and the WordPress environment. Some other things, too.</span></p>            
+            <p id="bi-t" class="2xl:text-lg 2xl:leading-loose">Dear recruiter, I'm Greg. I work on bringing designs to life. I got involved in coding somewhere in the 90s while dabbling with snake game clone in Turbo Pascal. That experience eventually set my path to discover web development and the WordPress environment. Some other things, too.</span></p>            
           </div>          
         </div>
         
