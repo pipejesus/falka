@@ -9,11 +9,14 @@
 
   <body 
     x-data="{
-      current: null,
-      navItems: []
+      current: null,      
+      navItems: [],
+      observer: null,
     }"
-    x-init="
-      navItems = Array.from(document.querySelectorAll('section')).map((item) => {
+
+    x-init="const sections = document.querySelectorAll('section');
+
+      navItems = Array.from(sections).map((item) => {
         return {
           slug: item.dataset.sectionSlug,
           name: item.dataset.sectionName
@@ -29,8 +32,25 @@
           behavior: 'auto',
           block: 'start',
         });
-      })"></body>
+      });      
+      
+      observer = new IntersectionObserver(
+        (entries) => {
+          for(const entry of entries) {
+            if(entry.isIntersecting) {
+              const entrySlug = entry.target.dataset.sectionSlug;
+              current = entrySlug;
+            }
+          }              
+        },
+        {
+          rootMargin: '-50% 0px'
+        }
+      );
 
+      for (let i = 0; i < sections.length; i++) {
+        observer.observe(sections[i]);
+      }        
     "
   >
     
@@ -43,7 +63,7 @@
             @click="current = navItem.slug"
           >          
             <span 
-              class="badge-lg badge rounded-sm" 
+              class="badge-lg tracking-wide badge rounded-sm" 
               :class="current == navItem.slug ? 'badge-primary' : ''"
               x-text="navItem.name"
             ></span>          
@@ -294,7 +314,7 @@
                             <pre><code></code></pre>
                             <pre><code><span class="badge badge-ghost">Description</span></code></pre>
                             <pre><code></code></pre>
-                            <pre style="white-space:normal" class="before:!mr-0 pl-[2ch]"><code>I tend to think in terms of images and motion. Not a particularly useful skill when faced with a hole in a business app, but maybe the Force knows better? You can embed the game in block editor and let your visitors play against the AI using gamepad. </code></pre>
+                            <pre style="white-space:normal" class="before:!mr-0 pl-[2ch]"><code>I tend to think in terms of images and motion. Not a particularly useful skill when faced with a hole in a business app, but maybe the Force knows better? You can embed the game in the block editor and let your visitors play against the AI using gamepad. </code></pre>
                           </div>
                         </div>                        
                       </div>
