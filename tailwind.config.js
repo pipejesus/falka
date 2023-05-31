@@ -37,7 +37,10 @@ export default {
         '10': '10',
         '11': '11',
         '12': '12',        
-      }      
+      },
+      dropShadow: {
+        'ptack': '20px 22px 0px #efefef'
+      }
     }
   },
   daisyUI: {

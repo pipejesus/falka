@@ -23,8 +23,8 @@ function scanElements() {
 
 function getCanvasPtackSize() {
     return {
-        width: elements.canvasPtackGrid.offsetWidth,
-        height: elements.canvasPtackGrid.offsetHeight
+        width: elements.canvasPtack.offsetWidth,
+        height: elements.canvasPtack.offsetHeight
     };
 }
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const doodle = document.createElement('shader-doodle');
     doodle.setAttribute('shadertoy', '');
-    doodle.classList.add('w-full', 'h-auto', 'aspect-video');
+    doodle.classList.add('w-full', 'h-auto', 'aspect-square', 'lg:aspect-video');
     
     const doodleShader = document.createElement('script');
     doodleShader.setAttribute('type', 'x-shader/x-fragment');
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     falkaDoodleShader.setAttribute('type', 'x-shader/x-fragment');
     falkaDoodleShader.textContent = falkaShaderString;
     falkaDoodle.appendChild(falkaDoodleShader);
-    falkaShaderContainer.appendChild(falkaDoodle);
+    // falkaShaderContainer.appendChild(falkaDoodle);
 
     initModule({
         print: function (n) {    
@@ -86,7 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
             = dimensions.width;
 
         const h = elements.canvasPtack.height
-            = dimensions.height;            
+            = dimensions.height;        
+            
+        console.log(w, ' ' , h);
 
         window.resizeRaylibCanvas(w, h);
     }
