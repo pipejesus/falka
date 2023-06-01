@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const doodle = document.createElement('shader-doodle');
     doodle.setAttribute('shadertoy', '');
-    doodle.classList.add('w-full', 'h-auto', 'aspect-square', 'lg:aspect-video');
+    doodle.classList.add('w-full', 'h-auto', 'aspect-square', 'lg:aspect-video', 'lg:w-1/2');
     
     const doodleShader = document.createElement('script');
     doodleShader.setAttribute('type', 'x-shader/x-fragment');
@@ -86,11 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
             = dimensions.width;
 
         const h = elements.canvasPtack.height
-            = dimensions.height;        
-            
-        console.log(w, ' ' , h);
+            = dimensions.height;                
 
-        window.resizeRaylibCanvas(w, h);
+        window?.resizeRaylibCanvas(w, h);
     }
 
     window.addEventListener(
