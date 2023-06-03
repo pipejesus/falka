@@ -28,7 +28,7 @@ function getCanvasPtackSize() {
     };
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
     scanElements();
 
     // const vids = document.getElementsByTagName('video');
@@ -62,14 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
     falkaDoodleShader.setAttribute('type', 'x-shader/x-fragment');
     falkaDoodleShader.textContent = falkaShaderString;
     falkaDoodle.appendChild(falkaDoodleShader);
-    // falkaShaderContainer.appendChild(falkaDoodle);
+    falkaShaderContainer.appendChild(falkaDoodle);    
 
     initModule({
         print: function (n) {    
             arguments.length > 1 && (n = Array.prototype.slice.call(arguments).join(" ")), console.log(n)
         }, 
-        canvas: elements.canvasPtack
-    }).then((raylibModule) => {
+        canvas: elements.canvasPtack 
+    }).then((raylibModule) => {        
         window.resizeRaylibCanvas = raylibModule.cwrap(
             "onResize",
             null,
@@ -96,5 +96,5 @@ document.addEventListener("DOMContentLoaded", () => {
         resizeHandler,
         true
     );
-});
+};
 
