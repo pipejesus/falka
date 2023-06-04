@@ -168,28 +168,9 @@
     <!--#2 Animation section-->
     <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen"  data-section-slug="animation" data-section-name="visual / animation">      
       <div class="flex flex-col h-full lg:pb-6 3xl:pb-12">
+        <!--Presentation section-->
         <div class="basis-full shrink flex items-center w-full">
-          <div class="flex lg:h-5/6 w-full justify-evenly items-center">
-           
-            <!--
-              
-            <div class="w-1/8 order-1 bg-[#f66b6b] lg:h-1/2 mask mask-squircle -rotate-[15deg]">
-              <div class="prose font-black text-white flex flex-col content-center justify-center items-center h-full mask mask-squircle">                
-                  <span class="text-3xl font-black leading-10 mb-4">Raylib</span>
-                  <span class="block lg:text-[3rem] 2xl:text-[5rem] leading-none mask mask-heart h-28 w-28 text-white bg-white"></span>
-                  <span class="text-3xl leading-10 mt-4">WebGL</span>
-              </div>                  
-            </div>
-            
-          -->
-
-
-          <!--
-            <div class="w-1/8 order-3 bg-[#020217] lg:h-1/2 mask mask-squircle rotate-[15deg]">
-            </div>
-
-          -->
-
+          <div class="flex lg:h-5/6 w-full justify-evenly items-center">                      
             <div data-canvas-ptack-grid class="order-2 mix-blend-multiply w-1/2 h-full justify-center flex relative group/ptack" >
               <div id="visual-stack" class="absolute lg:h-3/5 lg:w-3/5 top-1/2 -translate-y-1/2 flex items-center content-center object-cover mask mask-squircle z-20 bg-white scale-0 origin-center transition-all" x-bind:class="ptackModal ? 'scale-100' : 'scale-0'">
                 <div class="relative w-full h-full flex items-center justify-center">
@@ -239,6 +220,7 @@
             </div>
           </div>
         </div>        
+        <!--End Presentation section-->
 
         <!--Text under presentation section-->
         <div class="lg:h-max">
@@ -288,83 +270,38 @@
             </div>
             <!-- End details section-->        
           </div>
-        </div>        
-
+        </div>
+        <!--End text under presentation section-->
       </div>
     </section>
     <!--End #2 Animation section-->
 
     <!--#3a WordPress section-->
-    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start" data-section-slug="wordpress-a" data-section-name="wordpress dev">      
-      <div class="grid lg:pb-12 lg:grid-rows-[1fr_auto] lg:grid-cols-[1fr] lg:h-screen">
-
-        <!--Presentation row-->
-        <div class="lg:col-[1_/_1] flex items-center">
-          
-          <div class="w-full items-start justify-start flex lg:h-1/2 relative">
-              <div id="falka_shader_container" class="w-full h-full absolute top-0 left-0 z-0 -rotate-[5deg]"></div>
-              <div class="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-2">
-  
-                <div class="lg:col-start-2 lg:col-span-3 flex flex-col relative z-10">
-                  <div class="prose">
-                    <h2 class="font-black">Front.</h2>
-                    <div class="flex flex-row flex-wrap gap-4 justify-evenly">
-                      <span class="badge shrink grow badge-lg badge-ghost">Tailwind</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">JavaScript</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">Alpine.js</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">React</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">CSS3</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">SCSS</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">HTML5</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">Gutenberg blocks</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">Figma</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">WebGL</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">GLSL</span>
-                    </div>
-                  </div>                              
-                </div>      
-                
-                <div class="lg:row-start-6 lg:col-start-9  lg:col-end-12 flex flex-col relative z-10">
-                  <div class="prose">
-                    <h2 class="font-black">Back.</h2>
-                    <div class="flex flex-row flex-wrap gap-4 justify-evenly">
-                      <span class="badge shrink grow badge-lg badge-ghost">PHP 7/8</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">REST API</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">Theming</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">WooCommerce</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">WPML</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">WP-CLI</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">Bedrock</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">Sage</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">Acorn</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">Blade</span>
-                      <span class="badge shrink grow badge-lg badge-ghost">ACF</span>
-                    </div>
-                  </div>                              
-                </div>                    
-              </div>
-  
-              </div>          
-
+    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="wordpress-a" data-section-name="core wordpress stack">
+      <div class="flex flex-col h-full lg:pb-6 3xl:pb-12">
+        <!--Presentation section-->
+        <div class="basis-full shrink flex items-center w-full">
+          <div class="flex lg:h-5/6 w-full justify-evenly items-center">  
+            <div id="falka_shader_container" class="w-full h-full top-0 left-0 z-0 -rotate-[5deg]"></div>
+          </div>
         </div>
-        <!--End Presentation row-->
+        <!--End Presentation section-->
 
         <!--Text under presentation section-->
-        <div class="lg:col-[1_/_1]">
+        <div class="lg:h-max">
           <div class="grid lg:grid-cols-12 lg-grid-rows-1">
-
             <!--Contact section-->
-            <div class="hidden lg:flex w-full h-screen items-center justify-center lg:justify-start lg:h-auto lg:col-span-6 2xl:col-span-full lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1" style="--tw-bg-opacity: 0.01">
+            <div class="w-full h-screen items-center justify-center lg:justify-start flex lg:h-auto lg:col-span-5 lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1 3xl:col-span-full " style="--tw-bg-opacity: 0.01">
               <div class="short-bio">
                 <div class="flex flex-col lg:flex-row items-center gap-4 text-center lg:text-left">
                   <div class="avatar">
-                    <div class="w-32 lg:w-24 2xl:w-32 rounded-full">                
+                    <div class="w-32 lg:w-24 3xl:w-32 rounded-full">
                         <img src="greg.jpg" class="grayscale"/>                  
                     </div>
                   </div>
                   <div>                
                     <span class="text-3xl lg:text-2xl 3xl:text-3xl block">GREG JASIŃSKI</span>              
-                    <span class="uppercase text-sm lg:text-xs 2xl:text-sm block">PHP / JavaScript / WordPress</span>
+                    <span class="uppercase text-sm lg:text-xs 3xl:text-sm block">PHP / JavaScript / WordPress</span>
                   </div>              
                 </div>            
                 
@@ -390,18 +327,15 @@
             <!--End: Contact section-->     
             
             <!--Details section-->
-            <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-6 lg:col-start-7 2xl:col-span-5 lg:items-start lg:row-start-1 2xl:col-start-5" style="--tw-bg-opacity: 0.01">
+            <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-7 lg:col-start-6 lg:items-start lg:row-start-1 3xl:col-start-5 3xl:col-span-5" style="--tw-bg-opacity: 0.01">
               <div class="prose font-light">
-                <h1 class="font-thin uppercase">core wordpress skills</h1>
-                <p class="2xl:text-lg 2xl:leading-loose">
-                I create and maintain custom themes, plugins and components using various frameworks including woocoomerce, sage and bedrock. About half of the time I spent in WordPress world concerned patching, fixing and reanimating broken or outdated functionality.             
-                </p>            
-              </div>       
+                <h1 class="font-thin uppercase lg:text-3xl 3xl:text-4xl">core wordpress stack</h1>
+                <p class="2xl:text-lg 2xl:leading-loose">I create and maintain custom themes, plugins and components using various frameworks including woocoomerce, sage and bedrock. About half of the time I spent in WordPress world concerned patching, fixing and reanimating broken or outdated functionality.</p>
+              </div>          
             </div>
-            <!-- End details section-->            
+            <!-- End details section-->        
           </div>
-        </div>        
-
+        </div>          
       </div>
     </section>
     <!--End #3a WordPress section-->
