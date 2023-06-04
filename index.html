@@ -96,7 +96,7 @@
     <!--End: Site menu-->
 
     <!--#1 Intro section-->
-    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start" data-section-slug="intro" data-section-name="where is greg">
+    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start" data-section-slug="intro" data-section-name="foreword">
       <div class="grid lg:pb-6 3xl:pb-12 lg:grid-rows-[1fr_auto] lg:grid-cols-[1fr] lg:h-screen" >
 
         <!--Presentation section-->
@@ -154,8 +154,8 @@
             <!--Details section-->
             <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-7 lg:col-start-6 lg:items-start lg:row-start-1 3xl:col-start-5 3xl:col-span-5" style="--tw-bg-opacity: 0.01">
               <div class="prose font-light">
-                <h1 class="font-thin uppercase lg:text-3xl 3xl:text-4xl">Where is Greg</h1>
-                <p id="bi-t" class="2xl:text-lg 2xl:leading-loose">Dear recruiter, I'm Greg. I work on bringing designs to life. I got involved in coding somewhere in the 90s while dabbling with snake game clone in Turbo Pascal. That experience eventually set my path to discover web development and the WordPress environment. Some other things, too.</span></p>            
+                <h1 class="font-thin uppercase lg:text-3xl 3xl:text-4xl">Foreword</h1>
+                <p id="bi-t" class="2xl:text-lg 2xl:leading-loose">Dear recruiter, here is Greg. I work on bringing designs to life. I got involved in coding somewhere in the 90s while dabbling with snake game clone in Turbo Pascal. That experience eventually lead me to discover web development and the WordPress environment. Some other things, too.</span></p>            
               </div>          
             </div>
             <!-- End details section-->            
@@ -277,17 +277,17 @@
     </section>
     <!--End #2 Animation section-->
 
-    <!--#3a WordPress section-->
+    <!--#3a Core WordPress section-->
     <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="wordpress-a" data-section-name="core wordpress stack">
       <div class="flex flex-col h-full lg:pb-6 3xl:pb-12">
         <!--Presentation section-->
         <div class="basis-full shrink flex items-center w-full">
           <div class="flex lg:h-5/6 w-full justify-evenly items-center">
 
-            <div class="w-1/4 relative" x-bind:class="stackPhaze == 1 ? 'z-20' : ''">
+            <div class="w-1/4 relative order-1">
               <!--animate-dragons-->
-              <div class="animate-dragons animate-dragon-left" x-bind:class="stackPhaze == 1 ? '' : 'mix-blend-overlay'">              
-                <img src="./dragon-left.svg" class="mix-blend-overlay" x-bind:class="stackPhaze == 1 ? 'opacity-[0.04]' : ''" />
+              <div class="animate-dragons animate-dragon-left">              
+                <img src="./dragon-left.svg" class="opacity-[0.14]" />
                 <div class="prose mt-4 absolute w-full top-1/2 left-[120%] -translate-y-1/2" x-bind:class="stackPhaze == 1 ? 'block' : 'hidden'">
                   <div class="flex flex-wrap gap-2 justify-evenly">
                     <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">PHP 7/8</strong></span>
@@ -306,22 +306,10 @@
               <!--end animate-dragons-->
             </div>
 
-            <div id="falka_shader_container" class="w-1/2 h-1/4 px-12 translate-y-1/4 object-contain">
-              <!--switcher-->
-              <div class="prose absolute left-1/2 bottom-0 translate-y-full -translate-x-1/2 z-10">
-                <p class="font-light text-center">
-                  <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm mr-2 inline-block cursor-pointer select-none" @click.debounce.50="stackPhaze = (stackPhaze + 1) % 3">
-                    Phaze
-                  </span>              
-                </p>
-              </div>
-              <!--end switcher-->
-            </div>
-
-            <div class="w-1/4 relative" x-bind:class="stackPhaze == 2 ? 'z-20' : ''">              
+            <div class="w-1/4 relative order-3">
               <!--animate-dragons-->
-              <div class="animate-dragons animate-dragon-right" x-bind:class="stackPhaze == 2 ? '' : 'mix-blend-overlay'">              
-                <img src="./dragon-right.svg" class="mix-blend-overlay" x-bind:class="stackPhaze == 2 ? 'opacity-[0.04]' : ''" />
+              <div class="animate-dragons animate-dragon-right">
+                <img src="./dragon-right.svg" class="opacity-[0.14]"/>
                 <div class="prose mt-4 absolute w-full top-1/2 right-[120%] -translate-y-1/2" x-bind:class="stackPhaze == 2 ? 'block' : 'hidden'">
                   <div class="flex flex-wrap gap-2 justify-evenly">
                     <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>Tailwind</strong></span>
@@ -340,7 +328,26 @@
                 </div>
             </div>
             <!--end animate dragons-->        
-          </div>
+          </div>            
+
+            <div id="falka_shader_container" class="w-1/2 h-1/4 px-12 translate-y-1/4 object-contain order-2" :class="stackPhaze != 0 ? 'hide-falka' : ''">
+              <!--switcher-->
+              <div class="prose absolute left-1/2 -bottom-[10%] translate-y-full -translate-x-1/2 z-10">
+                <p class="font-light text-center">
+                  <span 
+                    class="bg-[#df4c4a] text-white py-2 px-2 rounded-full inline-block cursor-pointer select-none tooltip tooltip-bottom tooltip-primary"
+                    x-bind:data-tip="stackPhaze == 0 ? 'Backend stack' : stackPhaze == 1 ? 'Frontend stack' : stackPhaze == 2 ? 'Dragon Telepathy' : '' " 
+                    @click.debounce.50="stackPhaze = (stackPhaze + 1) % 3" 
+                  >
+                    <span class="block w-4 h-4 bg-white mask mask-circle" x-show="stackPhaze == 0"></span>
+                    <span class="block w-4 h-4 bg-white mask mask-square" x-show="stackPhaze == 1"></span>
+                    <span class="block w-4 h-4 bg-white mask mask-star" x-show="stackPhaze == 2"></span>
+                  </span>
+                </p>
+              </div>
+              <!--end switcher-->
+            </div>
+
         </div>
         </div>
         <!--End Presentation section-->
@@ -398,29 +405,29 @@
     </section>
     <!--End #3a WordPress section-->
 
-    <!--#3b WordPress section-->
-    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start" data-section-slug="wordpress-b" data-section-name="around wordpress">      
-      <div class="grid lg:pb-12 lg:grid-rows-[1fr_auto] lg:grid-cols-[1fr] lg:h-screen">
-        <div class="lg:col-[1_/_1]">
-          The top!
+    <!--#3b Around WordPress section-->
+    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="wordpress-b" data-section-name="around wordpress">
+      <div class="flex flex-col h-full lg:pb-6 3xl:pb-12">
+        <!--Presentation section-->
+        <div class="basis-full shrink flex items-center w-full"> 
         </div>
+        <!--End Presentation section-->
 
         <!--Text under presentation section-->
-        <div class="lg:col-[1_/_1]">
+        <div class="lg:h-max">
           <div class="grid lg:grid-cols-12 lg-grid-rows-1">
-
             <!--Contact section-->
-            <div class="hidden lg:flex w-full h-screen items-center justify-center lg:justify-start lg:h-auto lg:col-span-6 2xl:col-span-full lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1" style="--tw-bg-opacity: 0.01">
+            <div class="w-full h-screen items-center justify-center lg:justify-start flex lg:h-auto lg:col-span-5 lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1 3xl:col-span-full " style="--tw-bg-opacity: 0.01">
               <div class="short-bio">
                 <div class="flex flex-col lg:flex-row items-center gap-4 text-center lg:text-left">
                   <div class="avatar">
-                    <div class="w-32 lg:w-24 2xl:w-32 rounded-full">                
+                    <div class="w-32 lg:w-24 3xl:w-32 rounded-full">
                         <img src="greg.jpg" class="grayscale"/>                  
                     </div>
                   </div>
                   <div>                
                     <span class="text-3xl lg:text-2xl 3xl:text-3xl block">GREG JASIŃSKI</span>              
-                    <span class="uppercase text-sm lg:text-xs 2xl:text-sm block">PHP / JavaScript / WordPress</span>
+                    <span class="uppercase text-sm lg:text-xs 3xl:text-sm block">PHP / JavaScript / WordPress</span>
                   </div>              
                 </div>            
                 
@@ -446,34 +453,98 @@
             <!--End: Contact section-->     
             
             <!--Details section-->
-            <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-6 lg:col-start-7 2xl:col-span-5 lg:items-start lg:row-start-1 2xl:col-start-5" style="--tw-bg-opacity: 0.01">
+            <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-7 lg:col-start-6 lg:items-start lg:row-start-1 3xl:col-start-5 3xl:col-span-5" style="--tw-bg-opacity: 0.01">
               <div class="prose font-light">
                 <h1 class="font-thin uppercase">around wordpress</h1>
                 <p class="2xl:text-lg 2xl:leading-loose">
                   I tend to think in terms of images and motion. Not a particularly useful skill when faced with a hole in a business app, but maybe the Force knows better? Here you'll find a few examples of things I enjoy coding most.
-                </p>            
-              </div>        
+                </p>
+              </div>          
             </div>
-            <!-- End details section-->            
+            <!-- End details section-->        
           </div>
-        </div>        
-
+        </div>
       </div>
     </section>
-    <!--End #3b WordPress section-->
+    <!--End #3b Around WordPress section-->
 
-    <!--#4 Life skills section-->
-    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start" data-section-slug="life" data-section-name="life skills">      
-      <div class="grid lg:pb-12 lg:grid-rows-[1fr_auto] lg:grid-cols-[1fr] lg:h-screen">
-        <div class="lg:col-[1_/_1]">
-          The top!
+    <!--#4 Two of us section-->
+    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="two-of-us" data-section-name="two of us">
+      <div class="flex flex-col h-full lg:pb-6 3xl:pb-12">
+        <!--Presentation section-->
+        <div class="basis-full shrink flex items-center w-full">
+          <div class="flex w-full h-full gap-10 items-center" >
+              <div class="w-1/2 drop-grande-left">
+                <video src="videos/riconaplazy.m4v" type="video/mp4" autoplay muted loop class="h-full w-full aspect-square object-contain rounded-md filter-helena" style="clip-path: polygon(0 0, 100% 0, 100% 72%, 75% 100%, 25% 100%, 0 72%);"></video>
+              </div>
+              <div class="w-1/2 drop-grande-right">
+                <video src="videos/riconaplazy.m4v" type="video/mp4" autoplay muted loop class="h-full w-full aspect-square object-contain rounded-md -scale-x-[1] filter-inkwell" style="clip-path: polygon(0 0, 100% 0, 100% 72%, 75% 100%, 25% 100%, 0 72%);"></video>
+              </div>            
+            </div>
         </div>
+        <!--End Presentation section-->
 
         <!--Text under presentation section-->
-        <div class="lg:col-[1_/_1]">
+        <div class="lg:h-max">
           <div class="grid lg:grid-cols-12 lg-grid-rows-1">
+            <!--Contact section-->
+            <div class="w-full h-screen items-center justify-center lg:justify-start flex lg:h-auto lg:col-span-5 lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1 3xl:col-span-full " style="--tw-bg-opacity: 0.01">
+              <div class="short-bio">
+                <div class="flex flex-col lg:flex-row items-center gap-4 text-center lg:text-left">
+                  <div class="avatar">
+                    <div class="w-32 lg:w-24 3xl:w-32 rounded-full">
+                        <img src="greg.jpg" class="grayscale"/>                  
+                    </div>
+                  </div>
+                  <div>                
+                    <span class="text-3xl lg:text-2xl 3xl:text-3xl block">GREG JASIŃSKI</span>              
+                    <span class="uppercase text-sm lg:text-xs 3xl:text-sm block">PHP / JavaScript / WordPress</span>
+                  </div>              
+                </div>            
+                
+                <div class="flex flex-col lg:flex-row items-center gap-4 mt-12 lg:mt-6 2xl:mt-12">
+                  <a href="#" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 13.5l3 3m0 0l3-3m-3 3v-6m1.06-4.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                    </svg>
+                    Download Resume
+                  </a>
+      
+                  <div class="inline-block tooltip tooltip-outline"  data-tip="Click to copy e-mail to clipboard">
+                    <a href="mailto:grzegorz.karol.jasinski@gmail.com" class="btn btn-outline">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                      </svg>
+                      E-mail
+                    </a>  
+                  </div>  
+                </div>          
+              </div>    
+            </div>      
+            <!--End: Contact section-->     
+            
+            <!--Details section-->
+            <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-7 lg:col-start-6 lg:items-start lg:row-start-1 3xl:col-start-5 3xl:col-span-5" style="--tw-bg-opacity: 0.01">
+              <div class="prose font-light">
+                <h1 class="font-thin uppercase">around wordpress</h1>
+                <p class="2xl:text-lg 2xl:leading-loose">
+                  I tend to think in terms of images and motion. Not a particularly useful skill when faced with a hole in a business app, but maybe the Force knows better? Here you'll find a few examples of things I enjoy coding most.
+                </p>
+              </div>          
+            </div>
+            <!-- End details section-->        
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End #4 Two of us section-->
 
-            <div class="flex w-full justify-center col-span-full">
+    <!--#4 Life skills section-->
+    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="life" data-section-name="life skills">
+      <div class="flex flex-col h-full lg:pb-6 3xl:pb-12">
+        <!--Presentation section-->
+        <div class="basis-full shrink flex items-center w-full">           
+          <div class="flex w-full justify-center col-span-full">
             <div class="stats stats-vertical lg:stats-horizontal shadow">
     
               <div class="stat">
@@ -501,13 +572,64 @@
               </div>            
               
               </div>
-            </div>            
-          </div>
-        </div>        
+            </div>               
+        </div>
+        <!--End Presentation section-->
 
+        <!--Text under presentation section-->
+        <div class="lg:h-max">
+          <div class="grid lg:grid-cols-12 lg-grid-rows-1">
+            <!--Contact section-->
+            <div class="w-full h-screen items-center justify-center lg:justify-start flex lg:h-auto lg:col-span-5 lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1 3xl:col-span-full " style="--tw-bg-opacity: 0.01">
+              <div class="short-bio">
+                <div class="flex flex-col lg:flex-row items-center gap-4 text-center lg:text-left">
+                  <div class="avatar">
+                    <div class="w-32 lg:w-24 3xl:w-32 rounded-full">
+                        <img src="greg.jpg" class="grayscale"/>                  
+                    </div>
+                  </div>
+                  <div>                
+                    <span class="text-3xl lg:text-2xl 3xl:text-3xl block">GREG JASIŃSKI</span>              
+                    <span class="uppercase text-sm lg:text-xs 3xl:text-sm block">PHP / JavaScript / WordPress</span>
+                  </div>              
+                </div>            
+                
+                <div class="flex flex-col lg:flex-row items-center gap-4 mt-12 lg:mt-6 2xl:mt-12">
+                  <a href="#" class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 13.5l3 3m0 0l3-3m-3 3v-6m1.06-4.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                    </svg>
+                    Download Resume
+                  </a>
+      
+                  <div class="inline-block tooltip tooltip-outline"  data-tip="Click to copy e-mail to clipboard">
+                    <a href="mailto:grzegorz.karol.jasinski@gmail.com" class="btn btn-outline">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                      </svg>
+                      E-mail
+                    </a>  
+                  </div>  
+                </div>          
+              </div>    
+            </div>      
+            <!--End: Contact section-->     
+            
+            <!--Details section-->
+            <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-7 lg:col-start-6 lg:items-start lg:row-start-1 3xl:col-start-5 3xl:col-span-5" style="--tw-bg-opacity: 0.01">
+              <div class="prose font-light">
+                <h1 class="font-thin uppercase">around wordpress</h1>
+                <p class="2xl:text-lg 2xl:leading-loose">
+                  I tend to think in terms of images and motion. Not a particularly useful skill when faced with a hole in a business app, but maybe the Force knows better? Here you'll find a few examples of things I enjoy coding most.
+                </p>
+              </div>          
+            </div>
+            <!-- End details section-->        
+          </div>
+        </div>
       </div>
     </section>
-    <!--End #4 Life skills section-->
+    <!--End #4 Life skills section-->  
 
     <audio id="musique" preload loop>
       <source src="audio/birdy.mp3" type="audio/mp3">
