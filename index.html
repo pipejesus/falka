@@ -18,6 +18,8 @@
       isNavigating: false,
       timeOut: null,
       ptackModal: false,
+      stackBack: false,
+      stackFront: false,
       navClick(slug) {
         this.isNavigating = true; 
         this.current = slug;
@@ -281,9 +283,70 @@
       <div class="flex flex-col h-full lg:pb-6 3xl:pb-12">
         <!--Presentation section-->
         <div class="basis-full shrink flex items-center w-full">
-          <div class="flex lg:h-5/6 w-full justify-evenly items-center">  
-            <div id="falka_shader_container" class="w-full h-full top-0 left-0 z-0 -rotate-[5deg]"></div>
+          <div class="flex lg:h-5/6 w-full justify-evenly items-center">
+
+            <div class="w-1/4 relative" x-bind:class="stackBack ? 'z-20' : ''">
+              <!--animate-dragons-->
+              <div class="animate-dragons animate-dragon-left" x-bind:class="stackBack ? '' : 'mix-blend-overlay'">              
+                <img src="./dragon-left.svg" class="mix-blend-overlay" x-bind:class="stackBack ? 'opacity-[0.04]' : ''" />
+                <div class="prose mt-4 absolute w-full top-1/2 left-[120%] -translate-y-1/2" x-bind:class="stackBack ? 'block' : 'hidden'">
+                  <div class="flex flex-wrap gap-2 justify-evenly">
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">PHP 7/8</strong></span>
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">REST API</strong></span>
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">WooCommerce</strong></span>
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">Plugin dev.</strong></span>
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">WPML</strong></span>
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">ACF</strong></span>
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">Sage</strong></span>
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">Blade</strong></span>
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">Bedrock</strong></span>
+                    <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm"><strong class="text-white">Acorn</strong></span>                  
+                  </div>
+                </div>
+              </div>
+              <!--end animate-dragons-->
+            </div>
+
+            <div id="falka_shader_container" class="w-1/2 h-1/4 px-12 translate-y-1/4 object-contain">
+              <!--switcher-->
+              <div class="prose absolute left-1/2 bottom-0 translate-y-full -translate-x-1/2 z-10">
+                <p class="font-light text-center">
+                  <span class="bg-black text-white py-1 px-2 rounded-sm shadow-sm mr-2 inline-block cursor-pointer select-none" @click.debounce.50="stackBack = !stackBack; stackFront = false">
+                    Backend
+                  </span>
+
+                  <span class="bg-white py-1 px-2 rounded-sm shadow-sm inline-block cursor-pointer select-none" @click.debounce.50="stackFront = !stackFront; stackBack = false">
+                    Frontend
+                  </span>                  
+                </p>
+              </div>
+              <!--end switcher-->
+            </div>
+
+            <div class="w-1/4 relative" x-bind:class="stackFront ? 'z-20' : ''">
+              <!--animate-dragons-->
+              <div class="animate-dragons animate-dragon-right" x-bind:class="stackFront ? '' : 'mix-blend-overlay'">              
+                <img src="./dragon-right.svg" class="mix-blend-overlay" x-bind:class="stackFront ? 'opacity-[0.04]' : ''" />
+                <div class="prose mt-4 absolute w-full top-1/2 right-[120%] -translate-y-1/2" x-bind:class="stackFront ? 'block' : 'hidden'">
+                  <div class="flex flex-wrap gap-2 justify-evenly">
+                    <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>Tailwind</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>JavaScript</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>Alpine.js</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>JQuery &hearts;</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>React basics</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>CSS3</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>SCSS</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>HTML5</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>Gutenberg</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>Figma</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>WebGL basics</strong></span>
+                      <span class="bg-white py-1 px-2 rounded-sm shadow-sm"><strong>GLSL basics</strong></span>       
+                  </div>
+                </div>
+            </div>
+            <!--end animate dragons-->        
           </div>
+        </div>
         </div>
         <!--End Presentation section-->
 

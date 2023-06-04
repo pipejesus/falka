@@ -70,3 +70,39 @@ html, body {
   /* clip-path: polygon(44% 6%, 71% 0, 95% 4%, 86% 46%, 62% 71%, 22% 86%, 0 86%, 6% 50%, 23% 20%); */
   clip-path: polygon(44% 6%, 75% 1%, 100% 7%, 92% 43%, 70% 70%, 35% 88%, 0 93%, 6% 50%, 23% 20%);
 }
+
+.animate-dragons {
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;      
+}
+
+.animate-dragon-left {
+  animation-name: dragon-left;
+  transform-origin: left center;
+}
+
+.animate-dragon-right {
+  animation-name: dragon-right;
+  transform-origin: right center;
+}
+
+@keyframes dragon-left {
+  0% {
+    transform: rotateZ(7deg)
+  }
+  100%{
+    transform: rotateZ(-7deg);
+  }
+}
+
+@keyframes dragon-right {
+  0% {
+    transform: rotateZ(-7deg)
+  }
+  100%{
+    transform: rotateZ(7deg);
+  }
+}
