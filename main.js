@@ -4,6 +4,7 @@ import 'shader-doodle';
 import ClipboardJS from 'clipboard';
 import shaderString from './circlz.shader.glsl?raw';
 import falkaShaderString from './fallusie.shader.glsl?raw';
+import falkaLightShaderString from './falka-light.shader.glsl?raw';
 import initModule from './index.js';
 import Alpine from 'alpinejs';
 
@@ -13,12 +14,12 @@ Alpine.start();
 
 const elements = {
     canvasPtack: null,
-    canvasPtackGrid: null,
+    canvasPtackGrid: null,  
 };
 
 function scanElements() {
     elements.canvasPtack = document.querySelector('#canvas');
-    elements.canvasPtackGrid = document.querySelector('[data-canvas-ptack-grid]');    
+    elements.canvasPtackGrid = document.querySelector('[data-canvas-ptack-grid]');        
 }
 
 function getCanvasPtackSize() {
@@ -43,6 +44,7 @@ window.onload = () => {
 
     const shaderContainer = document.getElementById('circlz_shader_container');
     const falkaShaderContainer = document.getElementById('falka_shader_container');
+    const falkaLightShaderContainer = document.getElementById('falkalight_shader_container');
     
     const doodle = document.createElement('shader-doodle');
     doodle.setAttribute('shadertoy', '');
