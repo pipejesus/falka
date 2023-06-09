@@ -44,7 +44,8 @@ export default {
     }
   },
   daisyUI: {
-    themes: ["corporate", "dark"],
+    themes: ["corporate"],
+    darkTheme: ["corporate"]
   },
   plugins: [
     require("@tailwindcss/typography"), require("daisyui"),
