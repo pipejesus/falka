@@ -175,3 +175,11 @@ div[data-canvas-ptack-grid]:after {
     transform: rotateZ(5deg);
   }
 }
+
+/* 60s - 33.33 */
+
+.turntable {
+  @apply animate-turntable;
+  /* @apply !mask-circle; */
+  transform-origin: center;  
+}

@@ -109,7 +109,7 @@
 
         <!--Text under presentation section-->
         <div class="lg:col-[1_/_1]">
-          <div class="grid lg:grid-cols-12 lg-grid-rows-1">
+          <div class="grid lg:grid-cols-12 lg:grid-rows-1">
 
             <!--Contact section-->
             <div class="w-full h-screen items-center justify-center lg:justify-start flex lg:h-auto lg:col-span-5 lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1 3xl:col-span-full " style="--tw-bg-opacity: 0.01">
@@ -152,7 +152,7 @@
               <div class="prose font-light">
                 <h1 class="font-thin uppercase lg:text-3xl 3xl:text-4xl">Thanks for stepping by!</h1>
                 <p id="bi-t" class="2xl:text-lg 2xl:leading-loose">                  
-                  I work on implementing designs and ideas for the web.
+                  I work on implementing designs and ideas on the web.
                   For the past several years, I've been working with the WordPress environment, creating plugins, themes and WooCommerce customizations. Pleased to walk you through my gallery!
                   </p>            
               </div>          
@@ -166,11 +166,11 @@
     <!--End #1 Intro section-->
 
     <!--#2 Animation section-->
-    <section class="container px-6 lg:px-12 mx-auto h-screen relative lg:snap-always lg:snap-start"  data-section-slug="animation" data-section-name="visuals / motion">            
-        <div class="flex flex-col h-full lg:pb-6 3xl:pb-12 relative z-10 overflow-hidden ">
+    <section class="container px-6 lg:px-12 mx-auto lg:h-screen relative lg:snap-always lg:snap-start"  data-section-slug="animation" data-section-name="visuals / motion">            
+        <div class="flex flex-col lg:h-full lg:pb-6 3xl:pb-12 relative z-10">
         <!--Presentation section-->
-        <div class="basis-full shrink flex items-center w-full">
-          <div class="flex lg:h-5/6 w-full justify-evenly items-center">                      
+        <div class="lg:basis-full lg:shrink lg:flex lg:items-center w-full h-screen lg:h-auto">
+          <div class="flex lg:h-5/6 w-full lg:justify-evenly lg:items-center ">                      
             
             <div data-canvas-ptack-grid class="order-2 mix-blend-multiply h-full justify-center flex flex-col lg:flex-row relative group/ptack w-full lg:w-1/2" >
               
@@ -179,23 +179,26 @@
                   <div class="prose font-light text-xl text-white flex flex-col content-center justify-center items-center h-full text-center p-4" style="--tw-prose-bold: white">
                     <p class="grid-cols-2 gap-2 p-4 grid">
                       <span class="text-xl text-black col-span-2 mb-4">Experiment with:</span>
-                      <span class="badge badge-ghost col-span-1">#webassembly</span>
-                      <span class="badge badge-ghost col-span-1">#raylib</span>
-                      <span class="badge badge-ghost">#c++</span>
-                      <span class="badge badge-ghost">#blender</span>
-                      <span class="badge badge-ghost">#glsl</span>
-                      <span class="badge badge-ghost">#meshroom</span>
-                      <span class="badge badge-ghost">#clay<span class="hidden lg:inline"> modelling</span></span>
-                      <span class="badge badge-ghost">#photogrammetry</span>
-                      <span class="badge badge-ghost">#javascript</span>
-                      <span class="badge badge-ghost">#digitakt</span>
+                      <span class="badge badge-ghost rounded-sm col-span-1">#webassembly</span>
+                      <span class="badge badge-ghost rounded-sm col-span-1">#raylib</span>
+                      <span class="badge badge-ghost rounded-sm">#c++</span>
+                      <span class="badge badge-ghost rounded-sm">#blender</span>
+                      <span class="badge badge-ghost rounded-sm">#glsl</span>
+                      <span class="badge badge-ghost rounded-sm">#meshroom</span>
+                      <span class="badge badge-ghost rounded-sm">
+                        <span class="lg:hidden">#claywork</span>
+                        <span class="hidden lg:inline">#clay modelling</span>
+                      </span>
+                      <span class="badge badge-ghost rounded-sm">#photogrammetry</span>
+                      <span class="badge badge-ghost rounded-sm">#javascript</span>
+                      <span class="badge badge-ghost rounded-sm">#digitakt</span>
                     </p>                        
                   </div>                 
                 </div>
               </div>
 
               <canvas 
-                class="emscripten-ptack w-full h-auto aspect-square lg:aspect-auto lg:h-full lg:w-full object-cover mask mask-squircle relative transition-transform duration-700" x-bind:class="music ? 'rotate-90' : 'rotate-0' " 
+                class="emscripten-ptack w-full h-auto aspect-square lg:aspect-auto lg:h-full lg:w-full object-cover mask mask-squircle relative transition-all duration-[1800ms]" x-bind:class="music ? 'rotate-90' : 'rotate-0' " 
                 id="canvas"
                 oncontextmenu="event.preventDefault()"
                 tabindex="-1">
@@ -226,8 +229,8 @@
         <!--End Presentation section-->
 
         <!--Text under presentation section-->
-        <div class="lg:h-max">
-          <div class="grid lg:grid-cols-12 lg-grid-rows-1">
+        <div class="lg:h-max h-screen">
+          <div class="grid lg:grid-cols-12 lg:grid-rows-1">
             <!--Contact section-->
             <div class="hidden w-full h-screen items-center justify-center lg:justify-start lg:flex lg:h-auto lg:col-span-5 lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1 3xl:col-span-full " style="--tw-bg-opacity: 0.01">
               <div class="short-bio">
@@ -280,10 +283,10 @@
     <!--End #2 Animation section-->
 
     <!--#3a Core WordPress section-->
-    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="wordpress-a" data-section-name="wordpress experience">
-      <div class="flex flex-col h-full lg:pb-6 3xl:pb-12">
+    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start lg:h-screen" data-section-slug="wordpress-a" data-section-name="wordpress experience">
+      <div class="flex flex-col lg:h-full lg:pb-6 3xl:pb-12">
         <!--Presentation section-->
-        <div class="basis-full shrink flex items-center w-full">
+        <div class="lg:basis-full lg:shrink flex lg:items-center w-full h-screen lg:h-auto">
           <div class="flex lg:h-5/6 w-full justify-evenly items-center">
 
             <div class="w-1/4 relative order-1">
@@ -359,8 +362,8 @@
         <!--End Presentation section-->
 
         <!--Text under presentation section-->
-        <div class="lg:h-max">
-          <div class="grid lg:grid-cols-12 lg-grid-rows-1">
+        <div class="lg:h-max h-screen">
+          <div class="grid lg:grid-cols-12 lg:grid-rows-1">
             <!--Contact section-->
             <div class="hidden w-full h-screen items-center justify-center lg:justify-start lg:flex lg:h-auto lg:col-span-5 lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1 3xl:col-span-full " style="--tw-bg-opacity: 0.01">
               <div class="short-bio">
@@ -401,7 +404,7 @@
             <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-7 lg:col-start-6 lg:items-start lg:row-start-1 3xl:col-start-5 3xl:col-span-5" style="--tw-bg-opacity: 0.01">
               <div class="prose font-light">
                 <h1 class="font-thin uppercase lg:text-3xl 3xl:text-4xl">wordpress experience</h1>
-                <p class="2xl:text-lg 2xl:leading-loose">Four main ingredients on my pizza slice are: custom theming, plugins development, WooCommerce modifications and API integrations. Recently, I've been working almost exclusively in Sage / Bedrock environment. Reanimating broken code used to take around ⅖ of a typical year.</p>
+                <p class="2xl:text-lg 2xl:leading-loose">Four main ingredients of my pizza slice are: custom theming, plugins development, WooCommerce modifications and API integrations. Last year I've been working almost exclusively in Sage / Bedrock environment. Reanimating broken code takes around ⅖ of a typical time span.</p>
               </div>          
             </div>
             <!-- End details section-->        
@@ -412,18 +415,18 @@
     <!--End #3a WordPress section-->
 
     <!--#3b Around WordPress section-->
-    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="wordpress-b" data-section-name="around wordpress">
+    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start lg:h-screen" data-section-slug="wordpress-b" data-section-name="around wordpress">
       <div class="flex flex-col h-full lg:pb-6 3xl:pb-12 justify-between">
         <!--Presentation section-->
         <div class="basis-full grow shrink flex items-center w-full justify-center"> 
-          <div class="3xl:w-3/4 flex flex-col justify-evenly h-full">
+          <div class="w-full flex flex-col justify-evenly h-full">
             <div class="carousel w-full">  
 
               <div id="item1" class="carousel-item w-full">                  
                 <div class="flex w-full flex-col items-center"> 
-                    <video src="videos/shpong.m4v" type="video/mp4" autoplay muted loop class="aspect-auto h-auto w-1/2 shrink basis-1/2 object-contain rounded-sm"></video>
-                    <div class="basis-1/2 shrink w-1/2 mt-6">
-                      <div class="flex flex-wrap justify-between gap-1 mb-6">
+                    <video src="videos/shpong.m4v" type="video/mp4" autoplay muted loop class="aspect-auto h-auto w-full basis-full 3xl:w-1/2 3xl:shrink 3xl:basis-1/2 object-contain rounded-sm"></video>
+                    <div class="basis-full w-full 3xl:basis-1/2 3xl:shrink 3xl:w-1/2 mt-0 3xl:mt-6">
+                      <div class="flex flex-wrap justify-start 3xl:justify-between gap-1 mb-6">
                         <span class="badge badge-neutral rounded-sm">WP Shpong</span>
                         <span class="badge badge-outline rounded-sm">Gutenberg</span>                      
                         <span class="badge badge-outline rounded-sm">Create Block</span>
@@ -479,7 +482,7 @@
 
         <!--Text under presentation section-->
         <div class="basis-[min-content]">
-          <div class="grid lg:grid-cols-12 lg-grid-rows-1">
+          <div class="grid lg:grid-cols-12 lg:grid-rows-1">
             <!--Contact section-->
             <div class="hidden w-full h-screen items-center justify-center lg:justify-start lg:flex lg:h-auto lg:col-span-5 lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1 3xl:col-span-full " style="--tw-bg-opacity: 0.01">
               <div class="short-bio">
@@ -533,7 +536,7 @@
     <!--End #3b Around WordPress section-->
 
     <!--#4 Two of us section-->
-    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="two-of-us" data-section-name="the two of us">
+    <section class="!hidden container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="two-of-us" data-section-name="the two of us">
         <!--Presentation section-->
         <div class="basis-full h-full flex items-center w-full gap-x-10">          
             <div class="w-1/2 drop-grande-left">
@@ -549,7 +552,7 @@
     <!--End #4 Two of us section-->
 
     <!--#4 Life skills section-->
-    <section class="container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="life" data-section-name="life skills">
+    <section class="!hidden container px-6 lg:px-12 mx-auto lg:snap-always lg:snap-start h-screen" data-section-slug="life" data-section-name="life skills">
       <div class="flex flex-col h-full lg:pb-6 3xl:pb-12">
         <!--Presentation section-->
         <div class="basis-full shrink flex items-center w-full">           
@@ -647,7 +650,7 @@
 
         <!--Text under presentation section-->
         <div class="lg:h-max">
-          <div class="grid lg:grid-cols-12 lg-grid-rows-1">
+          <div class="grid lg:grid-cols-12 lg:grid-rows-1">
             <!--Contact section-->
             <div class="hidden w-full h-screen items-center justify-center lg:justify-start lg:flex lg:h-auto lg:col-span-5 lg:items-start lg:row-start-1 lg:row-span-full lg:col-start-1 3xl:col-span-full " style="--tw-bg-opacity: 0.01">
               <div class="short-bio">
