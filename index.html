@@ -199,8 +199,8 @@
                 tabindex="-1">
               </canvas>
 
-                <div class="absolute top-0 right-full z-10 3xl:left-full 3xl:right-auto ">
-                  <div class="relative flex gap-x-2">
+                <div class="absolute top-1/2 -translate-y-1/2 3xl:translate-y-0 right-full z-10 3xl:top-0 3xl:left-full 3xl:right-auto ">
+                  <div class="relative flex flex-col gap-y-2 3xl:flex-row 3xl:gap-y-0 3xl:gap-x-2">
 
                     <div data-tip="Pump the sparks" class="tooltip tooltip-bottom">
                       <label class="swap mask mask-squircle bg-[#020217] text-white p-2 hover:bg-gray-700">
@@ -399,7 +399,7 @@
             <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-7 lg:col-start-6 lg:items-start lg:row-start-1 3xl:col-start-5 3xl:col-span-5" style="--tw-bg-opacity: 0.01">
               <div class="prose font-light">
                 <h1 class="font-thin uppercase lg:text-3xl 3xl:text-4xl">wordpress experience</h1>
-                <p class="2xl:text-lg 2xl:leading-loose">The three main ingredients of my professional pizza have been: custom themes, plugins development and API integrations. I've worked with WooCoomerce, Sage and Bedrock and various front-end libraries. Fixing or reanimating dead code took more or less 2/5 of my yearly delivery.</p>
+                <p class="2xl:text-lg 2xl:leading-loose">The three main veggies on my pizza have been: custom themes, plugins, WooCommerce and API integrations development. During the most recent period, I've worked mostly in Sage / Bedrock environment. Reanimating dead code for more or less ⅖ of a typical year.</p>
               </div>          
             </div>
             <!-- End details section-->        
@@ -414,64 +414,49 @@
       <div class="flex flex-col h-full lg:pb-6 3xl:pb-12 justify-between">
         <!--Presentation section-->
         <div class="basis-full grow shrink flex items-center w-full justify-center"> 
-          <div class="3xl:w-3/4 ">
+          <div class="3xl:w-3/4 flex flex-col justify-evenly h-full">
             <div class="carousel w-full">  
+
               <div id="item1" class="carousel-item w-full">                  
-                <div class="flex w-full rounded-md p-6 gap-7">                                                          
-                  <div style="filter: drop-shadow(-8px 8px 0px rgba(0,0,0,0.2));">                      
-                    <div class="mockup-code h-full bg-base-content/90 rounded-sm">
-                      <div class="flex w-full h-full gap-4 px-6 pb-8 pt-2">
-                        <video src="videos/shpong.m4v" type="video/mp4" autoplay muted loop class="aspect-video h-auto w-1/2 shrink basis-1/2 object-contain rounded-sm"></video>
-                        <div class="basis-1/2 shrink grow w-1/2 h-auto">
-                          <pre><code><span class="badge badge-ghost rounded-sm">Stack</span></code></pre>
-                          <pre><code></code></pre>
-                          <pre><code>+ Gutenberg / Create Block</code></pre>
-                          <pre><code>+ HTML5 Canvas raw</code></pre>
-                          <pre><code>+ JavaScript vanille</code></pre>                            
-                          <pre><code>+ WordPress plugin (PHP)</code></pre>
-                          <pre><code></code></pre>
-                          <pre><code><span class="badge badge-ghost rounded-sm">Description</span></code></pre>
-                          <pre><code></code></pre>
-                          <pre style="white-space:normal" class="before:!mr-0 pl-[2ch]">
-                            <code>Shpong is an experiment in creating a Gutenberg block for WordPress that allows you to embed the game on any page and let your visitors play against the computer using gamepad.</code></pre>
-                        </div>
-                      </div>                        
-                    </div>
-                  </div>
+                <div class="flex w-full flex-col items-center"> 
+                    <video src="videos/shpong.m4v" type="video/mp4" autoplay muted loop class="aspect-auto h-auto w-1/2 shrink basis-1/2 object-contain rounded-sm"></video>
+                    <div class="basis-1/2 shrink w-1/2 mt-6">
+                      <div class="flex flex-wrap justify-between gap-1 mb-6">
+                        <span class="badge badge-neutral rounded-sm">WP Shpong</span>
+                        <span class="badge badge-outline rounded-sm">Gutenberg</span>                      
+                        <span class="badge badge-outline rounded-sm">Create Block</span>
+                        <span class="badge badge-outline rounded-sm">HTML5 Canvas</span>
+                        <span class="badge badge-outline rounded-sm">JavaScript vanille</span>
+                        <span class="badge badge-outline rounded-sm">WP plugin</span>
+                      </div>
+                      <code>A JS Canvas / Gutenberg experimental game block for WordPress that you can embed on any page and let your visitors play against the computer using gamepad.</code>                      
+                    </div>                    
                 </div>                                  
-              </div>
+              </div><!--end item 1-->
 
               <div id="item2" class="carousel-item w-full">
-                <div class="flex w-full rounded-md p-6 gap-7">
-                  <div style="filter: drop-shadow(-8px 8px 0px rgba(0,0,0,0.2));">                      
-                    <div class="mockup-code h-full bg-base-content/90 rounded-sm">
-                      <div class="flex w-full h-full gap-4 px-6 pb-8 pt-2">
-                        <video src="videos/iliketurtles.m4v" type="video/mp4" autoplay muted loop class="bg-white aspect-video h-auto w-1/2 shrink basis-1/2 object-contain rounded-sm"></video> 
-                        <div class="basis-1/2 shrink grow w-1/2 h-auto">
-                          <pre><code><span class="badge badge-ghost rounded-sm">Stack</span></code></pre>
-                          <pre><code></code></pre>
-                          <pre><code>+ Gutenberg / Create Block</code></pre>
-                          <pre><code>+ P5.js</code></pre>
-                          <pre><code>+ React</code></pre>
-                          <pre><code>+ Lit web components</code></pre>
-                          <pre><code>+ WordPress plugin (PHP)</code></pre>
-                          <pre><code></code></pre>
-                          <pre><code><span class="badge badge-ghost rounded-sm">Description</span></code></pre>
-                          <pre><code></code></pre>
-                          <pre style="white-space:normal" class="before:!mr-0 pl-[2ch]">
-                            <code>InstaDoodle is an experimental plugin that lets you create doodles directly in Gutenberg editor and display them along with the content. P5.js library served as the backbone for the project. Implemented functionality: brush size & type, color picker, undo & redo.</code>
-                          </pre>
-                        </div>
-                      </div>                        
-                    </div>
-                  </div>
+                <div class="flex w-full flex-col items-center">                                                                 
+                  <video src="videos/iliketurtles.m4v" type="video/mp4" autoplay muted loop class="bg-gray-200 p-1 aspect-[644/286] h-auto w-1/2 shrink basis-1/2 object-contain rounded-sm"></video> 
+                  <div class="basis-1/2 shrink grow w-1/2 mt-6">
+                    <div class="flex flex-wrap justify-between gap-1 mb-6">
+                        <span class="badge badge-neutral rounded-sm">InstaDoodle</span>
+                        <span class="badge badge-outline rounded-sm">P5.js</span>                      
+                        <span class="badge badge-outline rounded-sm">React</span>
+                        <span class="badge badge-outline rounded-sm">Gutenberg</span>                                                
+                        <span class="badge badge-outline rounded-sm">JavaScript</span>                        
+                        <span class="badge badge-outline rounded-sm">WP plugin</span>
+                      </div>                    
+                                                      
+                      <code>Experimental doodling plugin for Gutenberg editor. P5.js served as the backbone for the project. Implemented functionality: brush size & type, color picker, undo & redo.</code>
+                  </div>                                                                  
                 </div>                                  
-              </div>
-            </div><!--carousel-->
+              </div><!--end item 2-->
+
+            </div><!--end carousel-->
 
             <div class="flex justify-center w-full py-2 gap-2 z-20 relative" x-data="{currentSlide: 1}">
-                <a href="#item1" class="btn" x-bind:class="currentSlide == 1 ? 'btn-outline': 'btn-neutral'"  @click="currentSlide = 1;">WP Shpong</a> 
-                <a href="#item2" class="btn" x-bind:class="currentSlide == 2 ? 'btn-outline': 'btn-neutral'" @click="currentSlide = 2;">WP Insta Doodle</a>                 
+                <a href="#item1" class="btn btn-sm 3xl:btn-md" x-bind:class="currentSlide == 1 ? 'btn-outline': 'btn-neutral'"  @click="currentSlide = 1;">WP Shpong</a> 
+                <a href="#item2" class="btn btn-sm 3xl:btn-md" x-bind:class="currentSlide == 2 ? 'btn-outline': 'btn-neutral'" @click="currentSlide = 2;">WP Insta Doodle</a>                 
             </div>
           </div> 
         </div>
@@ -519,9 +504,9 @@
             <!--Details section-->
             <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-7 lg:col-start-6 lg:items-start lg:row-start-1 3xl:col-start-5 3xl:col-span-5" style="--tw-bg-opacity: 0.01">
               <div class="prose font-light">
-                <h1 class="font-thin uppercase">around wordpress</h1>
+                <h1 class="font-thin uppercase lg:text-3xl 3xl:text-4xl">around wordpress</h1>
                 <p class="2xl:text-lg 2xl:leading-loose">
-                  I tend to think in terms of images and motion. Not a particularly useful skill when faced with a hole in a business app, but maybe the Force knows better? Here you'll some examples of things I enjoyed coding most.
+                  I tend to think in terms of images and motion. Not a particularly useful skill when faced with a hole in a business app, but maybe the Force knows better? These types of things I've enjoyed coding most.
                 </p>
               </div>          
             </div>
@@ -687,7 +672,7 @@
             <!--Details section-->
             <div class="w-full h-screen items-center justify-center flex lg:h-auto lg:col-span-7 lg:col-start-6 lg:items-start lg:row-start-1 3xl:col-start-5 3xl:col-span-5" style="--tw-bg-opacity: 0.01">
               <div class="prose font-light">
-                <h1 class="font-thin uppercase">life skills</h1>
+                <h1 class="font-thin uppercase lg:text-3xl 3xl:text-4xl">life skills</h1>
                 <p class="2xl:text-lg 2xl:leading-loose">
                   Here's an honest list of soft skills and shortcommings in the format of a hard table! Observations made in two software houses during a 6 years time span.
                 </p>
