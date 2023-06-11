@@ -145,7 +145,6 @@ html, body {
   animation-name: dragon-right;
   transform-origin: right center;
 }
-
 div[data-canvas-ptack-grid]:after {
   content: " ";
   display: block;
@@ -158,6 +157,16 @@ div[data-canvas-ptack-grid]:after {
   opacity: 0;
 }
 
+.clip-rico-glasses {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 72%,
+    75% 100%,
+    25% 100%,
+    0 72%
+  );
+}
 @keyframes dragon-left {
   0% {
     transform: rotateZ(5deg);
