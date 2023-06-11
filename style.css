@@ -120,7 +120,7 @@ html, body {
   perspective: 400px;
 }
 #falka_shader_container.hide-falka shader-doodle {
-  display: none;
+  @apply lg:hidden;
 }
 
 .animate-dragon-left {

@@ -456,14 +456,15 @@
         <div
           class="lg:basis-full lg:shrink flex lg:items-center w-full h-screen lg:h-auto"
         >
-          <div class="flex lg:h-5/6 w-full justify-evenly items-center">
-            <div class="w-1/4 relative order-1">
+          <div class="flex flex-col lg:flex-row lg:h-5/6 w-full justify-evenly items-center">
+
+            <div class="w-full lg:w-1/4 lg:relative order-1">
               <!--animate-dragons-->
               <div class="animate-dragons animate-dragon-left">
-                <img src="./dragon-left.svg" class="opacity-[0.14]" />
+                <img src="./dragon-left.svg" class="hidden lg:block opacity-[0.14]" />
                 <div
-                  class="prose mt-4 absolute w-full top-1/2 left-[120%] -translate-y-1/2"
-                  x-bind:class="stackPhaze == 1 ? 'block' : 'hidden'"
+                  class="prose w-full lg:mt-4 lg:absolute lg:top-1/2 lg:left-[120%] lg:-translate-y-1/2"
+                  x-bind:class="stackPhaze == 1 ? 'lg:block' : 'lg:hidden'"
                 >
                   <div class="flex flex-wrap gap-2 justify-start">
                     <span
@@ -524,13 +525,13 @@
               <!--end animate-dragons-->
             </div>
 
-            <div class="w-1/4 relative order-3">
+            <div class="w-full lg:w-1/4 relative order-3">
               <!--animate-dragons-->
               <div class="animate-dragons animate-dragon-right">
-                <img src="./dragon-right.svg" class="opacity-[0.14]" />
+                <img src="./dragon-right.svg" class="hidden lg:block opacity-[0.14]" />
                 <div
-                  class="prose mt-4 absolute w-full top-1/2 right-[120%] -translate-y-1/2"
-                  x-bind:class="stackPhaze == 2 ? 'block' : 'hidden'"
+                  class="prose w-full lg:mt-4 lg:absolute lg:top-1/2 lg:right-[120%] lg:-translate-y-1/2"
+                  x-bind:class="stackPhaze == 2 ? 'lg:block' : 'lg:hidden'"
                 >
                   <div class="flex flex-wrap gap-2 justify-end">
                     <span class="bg-white py-1 px-2 rounded-sm shadow-sm"
@@ -581,12 +582,12 @@
 
             <div
               id="falka_shader_container"
-              class="w-1/2 h-1/4 px-12 translate-y-1/4 object-contain order-2"
+              class="w-full lg:w-1/2 h-1/4 lg:px-12 lg:translate-y-1/4 object-contain order-2"
               :class="stackPhaze != 0 ? 'hide-falka' : ''"
             >
               <!--switcher-->
               <div
-                class="prose absolute left-1/2 -bottom-[10%] translate-y-full -translate-x-1/2 z-10"
+                class="hidden lg:block prose absolute left-1/2 -bottom-[10%] translate-y-full -translate-x-1/2 z-10"
               >
                 <p class="font-light text-center">
                   <span
