@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @media (prefers-color-scheme: dark)  {
   :root {
     color-scheme: light;
@@ -42,6 +41,7 @@
   }
 }
 
+[x-cloak] { display: none !important; }
 html {  
   margin: 0;
   padding: 0;
@@ -186,7 +186,6 @@ div[data-canvas-ptack-grid]:after {
 }
 
 /* 60s - 33.33 */
-
 .turntable {
   @apply animate-turntable;
   /* @apply !mask-circle; */

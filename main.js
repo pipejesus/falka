@@ -29,35 +29,30 @@ function getCanvasPtackSize() {
     };
 }
 
-window.onload = () => {
-    scanElements();
-
-    const shaderContainer = document.getElementById('circlz_shader_container');
-    const falkaShaderContainer = document.getElementById('falka_shader_container');    
-    
+function attachShaderToContainer(containerId, classList, shaderContents) {    
+    const shaderContainer = document.getElementById(containerId);
     const doodle = document.createElement('shader-doodle');
     doodle.setAttribute('shadertoy', '');
-    doodle.classList.add('w-full', 'h-auto', 'aspect-square', 'lg:aspect-video', 'lg:w-1/2');
+    doodle.classList.add(...classList);
     
     const doodleShader = document.createElement('script');
     doodleShader.setAttribute('type', 'x-shader/x-fragment');
-    doodleShader.textContent = shaderString;
+    doodleShader.textContent = shaderContents;
     doodle.appendChild(doodleShader);
-    shaderContainer.appendChild(doodle);
+    shaderContainer.appendChild(doodle);    
+}
 
-    const falkaDoodle = document.createElement('shader-doodle');
-    falkaDoodle.setAttribute('shadertoy', '');
-    falkaDoodle.classList.add('w-full', 'h-full');
-    
-    const falkaDoodleShader = document.createElement('script');
-    falkaDoodleShader.setAttribute('type', 'x-shader/x-fragment');
-    falkaDoodleShader.textContent = falkaShaderString;
-    falkaDoodle.appendChild(falkaDoodleShader);
-    falkaShaderContainer.appendChild(falkaDoodle);    
+let resizeHandler = () => {        
+    const dimensions = getCanvasPtackSize();
+    const w = elements.canvasPtack.width = dimensions.width;
+    const h = elements.canvasPtack.height = dimensions.height;                
+    window?.resizeRaylibCanvas(w, h);
+}
 
+function attachPtackAnimation() {
     initModule({
         print: function (n) {    
-            arguments.length > 1 && (n = Array.prototype.slice.call(arguments).join(" ")), console.log(n)
+            // arguments.length > 1 && (n = Array.prototype.slice.call(arguments).join(" ")), console.log(n)
         }, 
         canvas: elements.canvasPtack 
     }).then((raylibModule) => {        
@@ -70,17 +65,20 @@ window.onload = () => {
         resizeHandler();
     });
 
-    let resizeHandler = () => {        
-        const dimensions = getCanvasPtackSize();
-        const w = elements.canvasPtack.width = dimensions.width;
-        const h = elements.canvasPtack.height = dimensions.height;                
-        window?.resizeRaylibCanvas(w, h);
-    }
-
     window.addEventListener(
         "resize",
         resizeHandler,
         true
-    );
+    );    
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    scanElements();
+    attachShaderToContainer('circlz_shader_container', ['w-full', 'h-auto', 'aspect-square', 'lg:aspect-video', 'lg:w-1/2'], shaderString);
+    attachShaderToContainer('falka_shader_container', ['w-full', 'h-full'], falkaShaderString);
+});
+
+window.onload = () => {
+    attachPtackAnimation();
 };
 
