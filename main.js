@@ -1,15 +1,15 @@
 import './style.css';
 import 'instagram.css/dist/instagram.css';
 import 'shader-doodle';
-import ClipboardJS from 'clipboard';
 import shaderString from './circlz.shader.glsl?raw';
 import falkaShaderString from './fallusie.shader.glsl?raw';
-import falkaLightShaderString from './falka-light.shader.glsl?raw';
 import initModule from './index.js';
 import Alpine from 'alpinejs';
+import dataBody from './src/body-data-alpine.js';
 
 window.resizeRaylibCanvas = null;
 window.Alpine = Alpine;
+Alpine.data('dataBody', dataBody);
 Alpine.start();
 
 const elements = {
@@ -32,19 +32,8 @@ function getCanvasPtackSize() {
 window.onload = () => {
     scanElements();
 
-    // const vids = document.getElementsByTagName('video');
-    // Array.from(vids).forEach(el => { el.onended = function () {
-    //     this.load();
-    //     this.play();
-    //   }});
-
-    // new ClipboardJS('[data-clipboard-copy]', {
-
-    // });
-
     const shaderContainer = document.getElementById('circlz_shader_container');
-    const falkaShaderContainer = document.getElementById('falka_shader_container');
-    const falkaLightShaderContainer = document.getElementById('falkalight_shader_container');
+    const falkaShaderContainer = document.getElementById('falka_shader_container');    
     
     const doodle = document.createElement('shader-doodle');
     doodle.setAttribute('shadertoy', '');
@@ -83,13 +72,8 @@ window.onload = () => {
 
     let resizeHandler = () => {        
         const dimensions = getCanvasPtackSize();
-
-        const w = elements.canvasPtack.width
-            = dimensions.width;
-
-        const h = elements.canvasPtack.height
-            = dimensions.height;                
-
+        const w = elements.canvasPtack.width = dimensions.width;
+        const h = elements.canvasPtack.height = dimensions.height;                
         window?.resizeRaylibCanvas(w, h);
     }
 

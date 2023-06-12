@@ -7,110 +7,22 @@
     <meta http-equiv="pragma" content="no-cache" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Greg Jasiński: Resume/Portfolio</title>
+    <title>Greg Jasiński 👣 Resume & Portfolio</title>
   </head>
 
-  <body
-    x-data="{
-      current: null,      
-      navItems: [],
-      observer: null,
-      isNavigating: false,
-      timeOut: null,      
-      ptackModal: false,
-      stackPhaze: 0,      
-      music: false,  
-      sectionToVideos: {},    
+  <body x-data="dataBody">
 
-      navClick(slug) {
-        this.isNavigating = true; 
-        const search = `[data-section-slug=${slug}]`;
-        const screen = document.querySelector(search);
-        screen?.scrollIntoView({
-          behavior: 'auto',
-          block: 'start',
-        });
-        this.current = slug;
-      }      
-    }"
-    x-init="const sections = document.querySelectorAll('section');
-
-      navItems = Array.from(sections).map((item) => {
-        
-        return {
-          slug: item.dataset.sectionSlug,
-          name: item.dataset.sectionName,
-          element: item
-        }
-      });
-
-      navItems.forEach((item) => {
-        const vids = Array.from(item.element.querySelectorAll('video'));        
-        sectionToVideos[item.slug] = vids;                
-      });      
-
-      current = navItems[0].slug;      
-
-      addEventListener('scroll', (e) => {                  
-        clearTimeout(timeOut);
-        timeOut = setTimeout(() => {
-            isNavigating = false;            
-        }, 200);
-      });      
-
-      $watch('current', value => {
-        Object.entries(sectionToVideos).forEach(item => {
-          const [sectionName, sectionVideos] = item;
-          if (! sectionVideos.length) {
-            return;
-          }
-
-          sectionVideos.forEach(video => { 
-            video.pause(); 
-          });
-        });
-
-        if (! sectionToVideos[value].length) {
-          return;
-        }
-
-        sectionToVideos[value].forEach(video => {          
-          video.play();
-        });
-      });
-      
-      observer = new IntersectionObserver(
-        (entries) => {
-          for(const entry of entries) {
-            if(entry.isIntersecting) {
-              if (!isNavigating) {
-                const entrySlug = entry.target.dataset.sectionSlug;
-                current = entrySlug;
-              }
-            }
-          }              
-        },
-        {
-          rootMargin: '-50% 0px'
-        }
-      );
-      
-      for (let i = 0; i < sections.length; i++) {
-        observer.observe(sections[i]);
-      }              
-    "
-  >
     <!--Site menu-->
-    <div class="fixed hidden lg:block top-12 right-12 z-50">
-      <ul class="text-right funky-nav">
+    <div class="fixed bottom-0 left-0 w-full bg-white/60 p-2 lg:bg-transparent lg:p-0 lg:bottom-auto lg:left-auto lg:w-auto lg:top-12 lg:right-12 z-50">
+      <ul class="text-center lg:text-right funky-nav">
         <template x-for="navItem in navItems">
           <li
-            class="mb-2 cursor-pointer select-none"
-            @click="navClick(navItem.slug)"
+            class="lg:mb-2 select-none"            
           >
             <span
-              class="badge-lg tracking-wide badge rounded-sm"
-              :class="current == navItem.slug ? 'badge-outline !filter-none' : 'badge-neutral'"
+              class="badge-lg tracking-wide badge rounded-sm pointer-events-none lg:pointer-events-auto lg:cursor-pointer select-none"
+              :class="current == navItem.slug ? 'badge-outline !filter-none' : 'badge-neutral hidden lg:inline'"
+              @click="navClick(navItem.slug)"
               x-text="navItem.name"
             ></span>
           </li>
@@ -164,7 +76,7 @@
                 <div
                   class="flex flex-col lg:flex-row items-center gap-4 mt-12 lg:mt-6 2xl:mt-12"
                 >
-                  <a href="#" class="btn btn-neutral rounded-sm">
+                  <a href="https://resume.io/r/9YJvTE2TX" target="_blank" class="btn btn-neutral rounded-sm">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -215,7 +127,7 @@
             >
               <div class="prose font-light">
                 <h1 class="font-thin uppercase lg:text-3xl 3xl:text-4xl">
-                  Thanks for stepping by!
+                  Hello there!
                 </h1>
                 <p id="bi-t" class="2xl:text-lg 2xl:leading-loose">
                   I work on implementing designs and ideas on the web. For the
@@ -397,7 +309,7 @@
                 <div
                   class="flex flex-col lg:flex-row items-center gap-4 mt-12 lg:mt-6 2xl:mt-12"
                 >
-                  <a href="#" class="btn btn-neutral rounded-sm">
+                  <a href="https://resume.io/r/9YJvTE2TX" target="_blank" class="btn btn-neutral rounded-sm">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -667,7 +579,7 @@
                 <div
                   class="flex flex-col lg:flex-row items-center gap-4 mt-12 lg:mt-6 2xl:mt-12"
                 >
-                  <a href="#" class="btn btn-neutral rounded-sm">
+                  <a href="https://resume.io/r/9YJvTE2TX" target="_blank" class="btn btn-neutral rounded-sm">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -720,7 +632,7 @@
                   wordpress experience
                 </h1>
                 <p class="2xl:text-lg 2xl:leading-loose">
-                  Four main ingredients of my pizza slice are: custom theming,
+                  My daily Four main ingredients of my pizza slice are: custom theming,
                   plugins development, WooCommerce modifications and API
                   integrations. Last year I've been working almost exclusively
                   in Sage / Bedrock environment. Reanimating broken code takes
@@ -909,7 +821,7 @@
                 <div
                   class="flex flex-col lg:flex-row items-center gap-4 mt-12 lg:mt-6 2xl:mt-12"
                 >
-                  <a href="#" class="btn btn-neutral rounded-sm">
+                  <a href="https://resume.io/r/9YJvTE2TX" target="_blank" class="btn btn-neutral rounded-sm">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -1129,7 +1041,7 @@
                 <div
                   class="flex flex-col lg:flex-row items-center gap-4 mt-12 lg:mt-6 2xl:mt-12"
                 >
-                  <a href="#" class="btn btn-neutral rounded-sm">
+                  <a href="https://resume.io/r/9YJvTE2TX" target="_blank" class="btn btn-neutral rounded-sm">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -1182,7 +1094,7 @@
                   see you!
                 </h1>
                 <p class="2xl:text-lg 2xl:leading-loose">
-                  Thank you for reaching down here! If you feel I can be a good company in your team or project, I'll be very happy to talk to you over the phone. Here's my number: <a href="tel:+48667200706" class="no-underline font-light ">+48 667 200 706</a> (Poland). Have a wonderful day!
+                  Thank you for reaching the end! If you feel I can be a good company for your team, I'll be very happy to have a chat. Here, please take my mobile number: <a href="tel:+48667200706" class="no-underline font-light ">+48 667 200 706</a>. Have a wonderful day!
                 </p>
               </div>
             </div>
@@ -1193,7 +1105,7 @@
     </section>
     <!--End #4 Life skills section-->
 
-    <audio id="musique" x-ref="musique" preload="metadata" loop>
+    <audio id="musique" x-ref="musique" preload="auto" loop>
       <source src="audio/birdy.mp3" type="audio/mp3" />
     </audio>
 
