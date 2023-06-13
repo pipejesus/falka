@@ -49,6 +49,11 @@ let resizeHandler = () => {
     window?.resizeRaylibCanvas(w, h);
 }
 
+function removePreloader() {
+    const b = document.querySelector('body');
+    b.classList.add('loaded');
+}
+
 function attachPtackAnimation() {
     initModule({
         print: function (n) {    
@@ -60,9 +65,12 @@ function attachPtackAnimation() {
             "onResize",
             null,
             ["number", "number"]
-        );
+        );        
         
         resizeHandler();
+        removePreloader();
+    }).catch((rejected)=>{
+        removePreloader();
     });
 
     window.addEventListener(

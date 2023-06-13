@@ -35,8 +35,18 @@ export default () => ({
         });      
   
         this.$watch('current', value => {
+
+          if (window.hasOwnProperty('deactivatePtack') && window.hasOwnProperty('activatePtack')) {
+            if (value !== 'animation') {            
+              window.deactivatePtack();
+            } else {
+              window.activatePtack();
+            }  
+          }
+
           Object.entries(this.sectionToVideos).forEach(item => {
             const [sectionName, sectionVideos] = item;
+            
             if (! sectionVideos.length) {
               return;
             }
